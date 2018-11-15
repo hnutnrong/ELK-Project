@@ -149,17 +149,6 @@ public class AccountJpaController implements Serializable {
         }
     }
 
-    public Account findByUsername(String Username) {
-        EntityManager em = getEntityManager();
-        try {
-            Query query = em.createNamedQuery("Account.findByUsername");
-            query.setParameter("username",Username );
-            return (Account) query.getSingleResult();
-        } finally {
-            em.close();
-        }
-    }
-
     public int getAccountCount() {
         EntityManager em = getEntityManager();
         try {
@@ -172,5 +161,5 @@ public class AccountJpaController implements Serializable {
             em.close();
         }
     }
-
+    
 }
