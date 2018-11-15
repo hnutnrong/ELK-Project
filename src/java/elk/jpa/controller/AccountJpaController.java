@@ -15,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.UserTransaction;
@@ -155,7 +156,9 @@ public class AccountJpaController implements Serializable {
             Query query = em.createNamedQuery("Account.findByUsername");
             query.setParameter("username",Username );
             return (Account) query.getSingleResult();
-        } finally {
+        }catch(NoResultException no){
+            return null;
+        }finally {
             em.close();
         }
     }
