@@ -22,6 +22,10 @@
         <servlet-name>ProductServlet</servlet-name>
         <servlet-class>elk.filter.ProductServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewLoginServlet</servlet-name>
+        <servlet-class>elk.servlet.NewLoginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -33,6 +37,10 @@
     <servlet-mapping>
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/Product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewLoginServlet</servlet-name>
+        <url-pattern>/NewLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
