@@ -57,21 +57,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Pricing</a>
                         </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    More
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="RegisterView.jsp">Register</a>
-                                    <a class="dropdown-item" href="LoginView.jsp">Login</a>
-
-                                </div>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="RegisterView.jsp">Register</a>
                         </li>
-                        <li>
-                            
+                        <li class="nav-item">
+                            <a class="nav-link" href="LoginView.jsp">Login</a>
                         </li>
+                       
                         <form class="form-inline" style="margin-left: 600px">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
