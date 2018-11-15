@@ -56,7 +56,10 @@
                             <a class="nav-link" href="NewProduct">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="RegisterView.jsp">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="LoginView.jsp">Login</a>
                         </li>
                         <li>
                             <div class="dropdown">
@@ -64,38 +67,36 @@
                                     ${sessionScope.LoggedIn == null ? "More" : sessionScope.LoggedIn.fname}
                                 </button>
                                 <c:if test="${sessionScope.LoggedIn==null}">
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="RegisterView.jsp">Register</a>
-                                    <a class="dropdown-item" href="LoginView.jsp">Login</a>
 
-                                </div>
-                               
+                                    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+                                    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                                    ${msg == "Invalid" ? '<script>swal("มีปัญหา", "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง","warning");</script>' : ''}
                                 </c:if>
-                               
-                               
-                                
-                              
-                                
+
+
+
+
+
                                 <c:if test="${sessionScope.LoggedIn!=null}">
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    
-                                    <a class="dropdown-item" href="NewHomepage?logout=1">Logout</a>
-                      
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                                </div>
-                               
+                                        <a class="dropdown-item" href="NewHomepage?logout=1">Logout</a>
+
+
+                                    </div>
+
                                 </c:if>
-                                
+
                             </div>
                         </li>
                         <li>
-                            
+
                         </li>
                         <form class="form-inline" style="margin-left: 600px">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
-                        
+
                     </ul>
                 </div>
             </a>
@@ -140,7 +141,7 @@
                                     <i class="fas fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img class="img-fluid" src="image/car4.jpg" alt="" style="width: 700px">
+                            <img class="img-fluid" src="image/car4.jpg" alt="" style="width: 650px">
                         </a>
                     </div>
                     <div class="col-md-6 col-lg-4">
@@ -182,6 +183,8 @@
                 <i class="fa fa-chevron-up"></i>
             </a>
         </div>
-         ${msg}
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        ${msg == "Invalid" ? '<script>swal("มีปัญหา", "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง","warning");</script>' : ''}
     </body>
 </html>
