@@ -22,6 +22,7 @@
         <servlet-name>ProductServlet</servlet-name>
         <servlet-class>elk.filter.ProductServlet</servlet-class>
     </servlet>
+<<<<<<< HEAD
     <servlet>
         <servlet-name>NewLoginServlet</servlet-name>
         <servlet-class>elk.servlet.NewLoginServlet</servlet-class>
@@ -30,6 +31,8 @@
         <servlet-name>ProductsServlet</servlet-name>
         <servlet-class>elk.servlet.ProductsServlet</servlet-class>
     </servlet>
+=======
+>>>>>>> parent of d03838e... NewLoginServlet
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -42,6 +45,7 @@
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/Product</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>NewLoginServlet</servlet-name>
         <url-pattern>/NewLogin</url-pattern>
@@ -50,6 +54,8 @@
         <servlet-name>ProductsServlet</servlet-name>
         <url-pattern>/Products</url-pattern>
     </servlet-mapping>
+=======
+>>>>>>> parent of d03838e... NewLoginServlet
     <session-config>
         <session-timeout>
             30
