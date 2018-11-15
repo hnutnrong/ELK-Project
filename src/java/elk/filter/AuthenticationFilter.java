@@ -22,29 +22,29 @@ import javax.servlet.http.HttpSession;
  *
  * @author Administrator
  */
-public class AuthenFilter implements Filter {
-private FilterConfig config;
+public class AuthenticationFilter implements Filter {
+    
+    private FilterConfig config;
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-      this.config=filterConfig;
+       this.config=filterConfig;
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpSession session = ((HttpServletRequest)request).getSession(false);
-            if(session == null || session.getAttribute("LoggedIn")== null){
-              config.getServletContext().getRequestDispatcher("/NewLogin").forward(request, response);
-                
-            }else{
-                chain.doFilter(request, response);
-            }
+        if(session == null || session.getAttribute("LoggedIn")== null){
+            config.getServletContext().getRequestDispatcher("/LoginView.jsp").forward(request, response);
+        }else{
+            chain.doFilter(request, response);
+        }
+        
     }
 
     @Override
     public void destroy() {
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    
-        
 }

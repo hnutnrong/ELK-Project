@@ -4,7 +4,6 @@
     Author     : Books
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,26 +18,6 @@
 
     </head>
     <body>
-        <h1>Products!</h1><hr>
-        <table id="example" class="table">
-            <th>Image</th>
-            <th>ProductID</th>
-            <th>Model</th>
-            <th>categoryID</th>
-            <th>Description</th>
-            <th>Price</th>
-                <c:forEach items="${product}" var="p" varStatus="vs">
-                <tr>
-                    <td><img src="${URL}/elkproduct/${p.model}.jpg" width="120" ></td>
-                    <td>${p.productid}</td>
-                    <td>${p.model}</td>
-                    <td>${p.categoryid}</td>
-                    <td>${p.description}</td>
-                    <td>${p.price}</td>
-                </tr>
-            </c:forEach>
-        </table>
-
+        <h1>Hello World!</h1>
     </body>
 </html>
-
