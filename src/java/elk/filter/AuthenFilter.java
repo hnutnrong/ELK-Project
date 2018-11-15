@@ -33,7 +33,7 @@ private FilterConfig config;
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpSession session = ((HttpServletRequest)request).getSession(false);
             if(session == null || session.getAttribute("LoggedIn")== null){
-              config.getServletContext().getRequestDispatcher("/Login").forward(request, response);
+              config.getServletContext().getRequestDispatcher("/NewLogin").forward(request, response);
                 
             }else{
                 chain.doFilter(request, response);
