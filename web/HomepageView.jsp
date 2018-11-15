@@ -55,19 +55,23 @@
                         <li class="nav-item">
                             <a class="nav-link" href="NewProduct">Product</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="RegisterView.jsp">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="LoginView.jsp">Login</a>
-                        </li>
+                     
                         <li>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    ${sessionScope.LoggedIn == null ? "More" : sessionScope.LoggedIn.fname}
+                                    ${sessionScope.LoggedIn == null ? "MyAccount" : sessionScope.LoggedIn.fname}
                                 </button>
                                 <c:if test="${sessionScope.LoggedIn==null}">
 
+                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                                         <a class="dropdown-item" href="NewLogin">Login</a>
+                                        <a class="dropdown-item" href="Register">Register</a>
+
+
+                                    </div>
+                                    
+                                    
                                     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
                                     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                                     ${msg == "Invalid" ? '<script>swal("มีปัญหา", "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง","warning");</script>' : ''}
