@@ -55,7 +55,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="NewProduct">Product</a>
                         </li>
-                     
+
                         <li>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,15 +63,15 @@
                                 </button>
                                 <c:if test="${sessionScope.LoggedIn==null}">
 
-                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                                         <a class="dropdown-item" href="NewLogin">Login</a>
+                                        <a class="dropdown-item" href="NewLogin">Login</a>
                                         <a class="dropdown-item" href="Register">Register</a>
-
+                                        <a class="dropdown-item" href="ShoppingCart.jsp">Shopcart</a>
 
                                     </div>
-                                    
-                                    
+
+
                                     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
                                     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                                     ${msg == "Invalid" ? '<script>swal("มีปัญหา", "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง","warning");</script>' : ''}
@@ -149,7 +149,7 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <a class="portfolio-item d-block mx-auto" href="LoginView.jsp">
+                        <a class="portfolio-item d-block mx-auto" href="NewProduct">
                             <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                                 <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
                                     <i class="fas fa-search-plus fa-3x"></i>
@@ -187,8 +187,6 @@
                 <i class="fa fa-chevron-up"></i>
             </a>
         </div>
-        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        ${msg == "Invalid" ? '<script>swal("มีปัญหา", "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง","warning");</script>' : ''}
+        
     </body>
 </html>
