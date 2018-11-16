@@ -140,6 +140,8 @@ public class CategoryJpaController implements Serializable {
         }
     }
 
+    
+    
     public Category findCategory(String id) {
         EntityManager em = getEntityManager();
         try {
