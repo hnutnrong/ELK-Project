@@ -93,24 +93,29 @@
             </a>
         </nav>
         <h1>Products!</h1><hr>
-        <table id="example" class="table">
-            <th>Image</th>
-            <th>ProductID</th>
-            <th>Model</th>
-            <th>categoryID</th>
-            <th>Description</th>
-            <th>Price</th>
-                <c:forEach items="${product}" var="p" varStatus="vs">
-                <tr>
-                    <td><img src="${URL}/elkproduct/${p.model}.jpg" width="120" ></td>
-                    <td>${p.productid}</td>
-                    <td>${p.model}</td>
-                    <td>${p.categoryid}</td>
-                    <td>${p.description}</td>
-                    <td>${p.price}</td>
-                </tr>
-            </c:forEach>
-        </table>
+        <div class="container">
+            <div class="row" >
+                
+                    
+                        <c:forEach items="${product}" var="p" varStatus="vs">
+                            <div class="col-sm-4">
+                            <div class="card" style="margin-bottom: 10px">
+                                <img class="card-img-top" src="${URL}/elkproduct/${p.model}.jpg" alt="Card image cap" style="height: 225px; width: 100%; display: block;">
+                                <div class="card-body">
+                                    <h5 class="card-title">${p.productid}</h5>
+                                    <p class="card-text">${p.description}</p>
+                                    <p class="card-text">${p.price} ฿</p>
+                                    <center><a href="#" class="btn btn-primary">Add to Cart</a></center>
+                                </div>
+                            </div>
+                                    </div>
+                        </c:forEach>
+                    
+                
+            </div>
+        </div>
+
+
 
     </body>
 </html>
