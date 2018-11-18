@@ -108,21 +108,21 @@
 
                 <c:forEach items="${product}" var="p" varStatus="vs" >
                     <div class="col-sm-4" >
-                        <div class="card" style="margin-bottom: 15px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black "  >
-                            <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block;border-radius: 50px; border: 2px solid black; margin-top: 15px;   "   ></center>
+                        <div class="card" style="margin-bottom: 15px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black; background-color: #9494b8;"  >
+                            <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block;border-radius: 50px; border: 2px solid black; margin-top: 15px; background-color: #b3b3cc;  "   ></center>
                             <div class="card-body " >
                                 <center><h5 class="card-title">${p.productname}</h5></center>
                                 <p class="card-text">${p.description}</p>
                                 <p class="card-text">${p.price} ฿</p>
                                 <form action="Addtocart">
-                                    <center><select style="padding: 5px; padding-left: 20px; padding-right: 20px" class="btn-secondary" name="quantity">
+                                    <center><select style=" background-color:#7575a3 ;padding: 5px; padding-left: 20px; padding-right: 20px" class="btn-secondary" name="quantity">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                         <option value="4">4</option>
                                         <option value="5">5</option>
-                                        </select><br><br>
-                                    <input name="${p.productid}" class="btn btn-secondary" type="submit" value="Add To Cart"></center>
+                                        </select ><br><br>
+                                        <input name="${p.productid}" class="btn btn-secondary" type="submit" value="Add To Cart" style="background-color: #cc0000;"></center>
                                 </form> 
                             </div>
                         </div>
