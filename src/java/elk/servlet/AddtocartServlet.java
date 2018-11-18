@@ -5,18 +5,32 @@
  */
 package elk.servlet;
 
+import elk.jpa.controller.ProductJpaController;
+import elk.model.Product;
+import elk.model.s.ShoppingCart;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
 
 /**
  *
  * @author Administrator
  */
 public class AddtocartServlet extends HttpServlet {
+
+    @PersistenceUnit(unitName = "ElkfinalProjectPU")
+    EntityManagerFactory emf;
+
+    @Resource
+    UserTransaction utx;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,7 +43,21 @@ public class AddtocartServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
+        HttpSession session = request.getSession();
+        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        String product = request.getParameter("product");
+        String quantity = request.getParameter("quantity");
+
+        if (session.getAttribute("cart") == null) {
+            cart = new ShoppingCart();
+            session.setAttribute("cart", cart);
+        }
+        ProductJpaController pjc = new ProductJpaController(utx, emf);
+        Product onlyproduct = pjc.findByOnlyProduct(product);
+        for (int i = 0; i < Integer.parseInt(quantity); i++) {
+            cart.add(onlyproduct);
+        }
+        response.sendRedirect("NewProduct");
         
     }
 
