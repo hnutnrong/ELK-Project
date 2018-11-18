@@ -1,7 +1,7 @@
 <%-- 
-    Document   : ProductView
-    Created on : Nov 15, 2018, 4:25:59 PM
-    Author     : Books
+    Document   : Navbar
+    Created on : Nov 18, 2018, 3:11:18 PM
+    Author     : Administrator
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -11,24 +11,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="index/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom fonts for this template -->
+        <link href="index/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+        <!-- Plugin CSS -->
+
+
+        <!-- Custom styles for this template -->
+        <link href="index/css/freelancer.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
-    <style>
-        body, html {
-
-            background-repeat: no-repeat;
-            background-color: #727587;
-        }
-
-    </style>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">
                 <a href="index.html" class='fas fa-car-alt' style='font-size:30px;color:whitesmoke'></a>
                 <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
@@ -82,7 +86,7 @@
                             </div>
                         </li>
                         <li>
-
+                       
                         </li>
                         <li class="nav-item">
                             <a href="YourCartView.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 600px"></a   >
@@ -91,41 +95,13 @@
                             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
-
+                         
 
                     </ul>
                 </div>
             </a>
         </nav>
-        <br>          
-        <div style="background-color: #727587;color: white">
-            <center>  <img src="image/logo3.png" width="400px" height="400px" ></center>
-            <center><h1>ELK'S Product</h1></center><hr>
-        </div>
-        <div class="container" >
-            <div class="row"  >
-
-
-                <c:forEach items="${product}" var="p" varStatus="vs" >
-                    <div class="col-sm-4" >
-                        <div class="card" style="margin-bottom: 10px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black">
-                            <img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 225px; width: 100%; display: block;border-radius: 50px; border: 2px solid black;">
-                            <div class="card-body">
-                                <h5 class="card-title">${p.productid}</h5>
-                                <p class="card-text">${p.description}</p>
-                                <p class="card-text">${p.price} ฿</p>
-                                <center><a href="YourCartView.jsp"  style="background-color: #4C4D54" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add to Cart</a></center>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-
-
-            </div>
-        </div>
 
 
 
-    </body>
 </html>
-
