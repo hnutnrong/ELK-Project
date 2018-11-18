@@ -111,7 +111,7 @@
                         <div class="card" style="margin-bottom: 10px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black">
                             <img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 225px; width: 100%; display: block;border-radius: 50px; border: 2px solid black;">
                             <div class="card-body">
-                                <h5 class="card-title">${p.productid}</h5>
+                                <h5 class="card-title">${p.productname}</h5>
                                 <p class="card-text">${p.description}</p>
                                 <p class="card-text">${p.price} ฿</p>
                                 <center><a href="YourCartView.jsp"  style="background-color: #4C4D54" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add to Cart</a></center>
