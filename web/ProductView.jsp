@@ -108,10 +108,10 @@
 
                 <c:forEach items="${product}" var="p" varStatus="vs" >
                     <div class="col-sm-4" >
-                        <div class="card" style="margin-bottom: 10px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black">
-                            <img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 225px; width: 100%; display: block;border-radius: 50px; border: 2px solid black;">
-                            <div class="card-body ">
-                                <h5 class="card-title">${p.productname}</h5>
+                        <div class="card" style="margin-bottom: 15px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black "  >
+                            <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block;border-radius: 50px; border: 2px solid black; margin-top: 15px;   "   ></center>
+                            <div class="card-body " >
+                                <center><h5 class="card-title">${p.productname}</h5></center>
                                 <p class="card-text">${p.description}</p>
                                 <p class="card-text">${p.price} ฿</p>
                                 <form action="Addtocart">
