@@ -15,10 +15,12 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <style>
             body, html {
-                height: 100%;
+
                 background-repeat: no-repeat;
-                background-image: url("image/car1.jpg");
+                background-color: #C0A08E;
             }
+
+
 
             .card-container.card {
                 max-width: 350px;

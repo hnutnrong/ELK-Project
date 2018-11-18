@@ -10,6 +10,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -19,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Administrator
+ * @author Windows10
  */
 @Entity
 @Table(name = "PRODUCT")
@@ -27,52 +29,40 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p")
     , @NamedQuery(name = "Product.findByProductid", query = "SELECT p FROM Product p WHERE p.productid = :productid")
+    , @NamedQuery(name = "Product.findByProductname", query = "SELECT p FROM Product p WHERE p.productname like :productname")
     , @NamedQuery(name = "Product.findByModel", query = "SELECT p FROM Product p WHERE p.model = :model")
-    , @NamedQuery(name = "Product.findByCategoryid", query = "SELECT p FROM Product p WHERE p.categoryid = :categoryid")
     , @NamedQuery(name = "Product.findByDescription", query = "SELECT p FROM Product p WHERE p.description = :description")
-    , @NamedQuery(name = "Product.findByPrice", query = "SELECT p FROM Product p WHERE p.price = :price"),
-    
-})
-    
+    , @NamedQuery(name = "Product.findByPrice", query = "SELECT p FROM Product p WHERE p.price = :price")})
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
+    @Size(min = 1, max = 50)
     @Column(name = "PRODUCTID")
     private String productid;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    @Size(max = 50)
+    @Column(name = "PRODUCTNAME")
+    private String productname;
+    @Size(max = 50)
     @Column(name = "MODEL")
     private String model;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
-    @Column(name = "CATEGORYID")
-    private String categoryid;
     @Size(max = 100)
     @Column(name = "DESCRIPTION")
     private String description;
-    @Basic(optional = false)
-    @NotNull
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "PRICE")
-    private double price;
+    private Double price;
+    @JoinColumn(name = "CATID", referencedColumnName = "CATID")
+    @ManyToOne
+    private Category catid;
 
     public Product() {
     }
 
     public Product(String productid) {
         this.productid = productid;
-    }
-
-    public Product(String productid, String model, String categoryid, double price) {
-        this.productid = productid;
-        this.model = model;
-        this.categoryid = categoryid;
-        this.price = price;
     }
 
     public String getProductid() {
@@ -83,20 +73,20 @@ public class Product implements Serializable {
         this.productid = productid;
     }
 
+    public String getProductname() {
+        return productname;
+    }
+
+    public void setProductname(String productname) {
+        this.productname = productname;
+    }
+
     public String getModel() {
         return model;
     }
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    public String getCategoryid() {
-        return categoryid;
-    }
-
-    public void setCategoryid(String categoryid) {
-        this.categoryid = categoryid;
     }
 
     public String getDescription() {
@@ -107,12 +97,20 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Category getCatid() {
+        return catid;
+    }
+
+    public void setCatid(Category catid) {
+        this.catid = catid;
     }
 
     @Override

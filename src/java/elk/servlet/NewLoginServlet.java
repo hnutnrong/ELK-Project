@@ -60,10 +60,10 @@ public class NewLoginServlet extends HttpServlet {
                         response.sendRedirect("NewHomepage");
                         return;
                     }
-                    request.setAttribute("msg", "Email or Password Invalid !!!");
+                    request.setAttribute("msg", "Invalid");
                     getServletContext().getRequestDispatcher("/LoginView.jsp").forward(request, response);
                 }
-                 request.setAttribute("msg", "Email or Password Invalid !!!");
+                 request.setAttribute("msg", "Invalid");
                  getServletContext().getRequestDispatcher("/LoginView.jsp").forward(request, response);
             }
          getServletContext().getRequestDispatcher("/LoginView.jsp").forward(request, response);

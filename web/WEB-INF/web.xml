@@ -46,6 +46,10 @@
         <servlet-name>ShowcartServlet</servlet-name>
         <servlet-class>elk.servlet.ShowcartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>elk.servlet.SearchServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -81,6 +85,10 @@
     <servlet-mapping>
         <servlet-name>ShowcartServlet</servlet-name>
         <url-pattern>/Showcart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/Search</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

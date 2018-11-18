@@ -8,20 +8,23 @@ package elk.jpa.controller;
 import elk.jpa.controller.exceptions.NonexistentEntityException;
 import elk.jpa.controller.exceptions.PreexistingEntityException;
 import elk.jpa.controller.exceptions.RollbackFailureException;
-import elk.model.Product;
+import elk.model.Account;
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import elk.model.Category;
+import elk.model.Product;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.transaction.UserTransaction;
 
 /**
  *
- * @author Administrator
+ * @author Windows10
  */
 public class ProductJpaController implements Serializable {
 
@@ -41,7 +44,16 @@ public class ProductJpaController implements Serializable {
         try {
             utx.begin();
             em = getEntityManager();
+            Category catid = product.getCatid();
+            if (catid != null) {
+                catid = em.getReference(catid.getClass(), catid.getCatid());
+                product.setCatid(catid);
+            }
             em.persist(product);
+            if (catid != null) {
+                catid.getProductList().add(product);
+                catid = em.merge(catid);
+            }
             utx.commit();
         } catch (Exception ex) {
             try {
@@ -65,7 +77,22 @@ public class ProductJpaController implements Serializable {
         try {
             utx.begin();
             em = getEntityManager();
+            Product persistentProduct = em.find(Product.class, product.getProductid());
+            Category catidOld = persistentProduct.getCatid();
+            Category catidNew = product.getCatid();
+            if (catidNew != null) {
+                catidNew = em.getReference(catidNew.getClass(), catidNew.getCatid());
+                product.setCatid(catidNew);
+            }
             product = em.merge(product);
+            if (catidOld != null && !catidOld.equals(catidNew)) {
+                catidOld.getProductList().remove(product);
+                catidOld = em.merge(catidOld);
+            }
+            if (catidNew != null && !catidNew.equals(catidOld)) {
+                catidNew.getProductList().add(product);
+                catidNew = em.merge(catidNew);
+            }
             utx.commit();
         } catch (Exception ex) {
             try {
@@ -99,6 +126,11 @@ public class ProductJpaController implements Serializable {
                 product.getProductid();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The product with id " + id + " no longer exists.", enfe);
+            }
+            Category catid = product.getCatid();
+            if (catid != null) {
+                catid.getProductList().remove(product);
+                catid = em.merge(catid);
             }
             em.remove(product);
             utx.commit();
@@ -145,6 +177,19 @@ public class ProductJpaController implements Serializable {
         try {
             return em.find(Product.class, id);
         } finally {
+            em.close();
+        }
+    }
+    
+     public List<Product> findByProductname(String productname) {
+        EntityManager em = getEntityManager();
+        try {
+            Query query = em.createNamedQuery("Product.findByProductname");
+            query.setParameter("productname","%"+productname+"%" );
+            return query.getResultList();
+        }catch(NoResultException no){
+            return null;
+        }finally {
             em.close();
         }
     }
