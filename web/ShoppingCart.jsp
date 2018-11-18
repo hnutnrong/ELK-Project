@@ -19,6 +19,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <link href="index/css/freelancer.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
 
 
         <script src="https://use.fontawesome.com/c560c025cf.js"></script>
@@ -42,7 +43,7 @@
 
                         <li>
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
                                     ${sessionScope.LoggedIn == null ? "MyAccount" : sessionScope.LoggedIn.fname}
                                 </button>
                                 <c:if test="${sessionScope.LoggedIn==null}">
@@ -51,7 +52,7 @@
 
                                         <a class="dropdown-item" href="NewLogin">Login</a>
                                         <a class="dropdown-item" href="Register">Register</a>
-
+                                       
 
                                     </div>
 
@@ -78,12 +79,16 @@
                             </div>
                         </li>
                         <li>
-
+                       
                         </li>
-                        <form class="form-inline" style="margin-left: 600px">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <li class="nav-item">
+                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 600px"></a   >
+                        </li>
+                        <form action="Search" class="form-inline" style="margin-left: 20px">
+                            <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
+                         
 
                     </ul>
                 </div>

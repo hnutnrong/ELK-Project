@@ -28,7 +28,7 @@
 
     </style>
     <body>
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
+       <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">
                 <a href="index.html" class='fas fa-car-alt' style='font-size:30px;color:whitesmoke'></a>
                 <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
@@ -55,7 +55,7 @@
 
                                         <a class="dropdown-item" href="NewLogin">Login</a>
                                         <a class="dropdown-item" href="Register">Register</a>
-                                        <a class="dropdown-item" href="ShoppingCart.jsp">Shopcart</a>
+                                       
 
                                     </div>
 
@@ -82,16 +82,16 @@
                             </div>
                         </li>
                         <li>
-
+                       
                         </li>
                         <li class="nav-item">
-                            <a href="YourCartView.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 600px"></a   >
+                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 600px"></a   >
                         </li>
                         <form action="Search" class="form-inline" style="margin-left: 20px">
                             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
-
+                         
 
                     </ul>
                 </div>
@@ -110,11 +110,20 @@
                     <div class="col-sm-4" >
                         <div class="card" style="margin-bottom: 10px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black">
                             <img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 225px; width: 100%; display: block;border-radius: 50px; border: 2px solid black;">
-                            <div class="card-body">
+                            <div class="card-body ">
                                 <h5 class="card-title">${p.productname}</h5>
                                 <p class="card-text">${p.description}</p>
                                 <p class="card-text">${p.price} ฿</p>
-                                <center><a href="YourCartView.jsp"  style="background-color: #4C4D54" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add to Cart</a></center>
+                                <form action="Addtocart">
+                                    <center><select style="padding: 5px; padding-left: 20px; padding-right: 20px" class="btn-secondary" name="quantity">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        </select><br><br>
+                                    <input name="${p.productid}" class="btn btn-secondary" type="submit" value="Add To Cart"></center>
+                                </form> 
                             </div>
                         </div>
                     </div>
