@@ -197,8 +197,8 @@ public class ProductJpaController implements Serializable {
      public Product findByOnlyProduct(String productname) {
         EntityManager em = getEntityManager();
         try {
-            Query query = em.createNamedQuery("Product.findByProductname");
-            query.setParameter("productname",productname );
+            Query query = em.createNamedQuery("Product.findByProductid");
+            query.setParameter("productid",productname );
             return (Product) query.getSingleResult();
         }catch(NoResultException no){
             return null;

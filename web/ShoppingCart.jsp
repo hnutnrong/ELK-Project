@@ -4,6 +4,7 @@
     Author     : Windows10
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -98,20 +99,22 @@
         <div class="card">
             
             <div class="card-body">
-                <c:forEach items="${product}" var="p" varStatus="vs">
+               
                     <div class="row">
+                    
+                        <c:forEach items="${sessionScope.cart.lineItems}" var="p" varStatus="vs">
                         <div class="col-xs-2 col-md-2">
-                            <img class="img-responsive" src="elkproduct/b100.jpg" style="width: 120px;height: 120px" alt="prewiew">
+                            <img class="img-responsive" src="elkproduct/b100.jpg" style="width: 120px;height: 120px" alt="preview">
                         </div>
                         <div class="col-xs-4 col-md-6">
-                            <h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
+                            <h4 class="product-name"><strong>${p.product.productname}</strong></h4><h4><small>Product description</small></h4>
                         </div>
                         <div class="col-xs-6 col-md-4 row">
                             <div class="col-xs-6 col-md-6 text-right" style="padding-top: 5px">
-                                <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+                                <h6><strong>${p.product.price} <span class="text-muted">x</span></strong></h6>
                             </div>
                             <div class="col-xs-4 col-md-4">
-                                <input type="text" class="form-control input-sm" value="1">
+                                <input type="text" class="form-control input-sm" value="${p.quantity}">
                             </div>
                             <div class="col-xs-2 col-md-2">
                                 <button type="button" class="btn btn-outline-danger btn-xs">
@@ -119,29 +122,9 @@
                                 </button>
                             </div>
                         </div>
+                             </c:forEach>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-xs-2 col-md-2">
-                            <img class="img-responsive" src="elkproduct/b101.jpg"  style="width: 120px;height: 120px" alt="prewiew">
-                        </div>
-                        <div class="col-xs-4 col-md-6">
-                            <h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
-                        </div>
-                        <div class="col-xs-6 col-md-4 row">
-                            <div class="col-xs-6 col-md-6 text-right" style="padding-top: 5px">
-                                <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
-                            </div>
-                            <div class="col-xs-4 col-md-4">
-                                <input type="text" class="form-control input-sm" value="1">
-                            </div>
-                            <div class="col-xs-2 col-md-2">
-                                <button type="button" class="btn btn-outline-danger btn-xs">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+             
 
                     <hr>
                    

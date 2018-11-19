@@ -43,21 +43,27 @@ public class AddtocartServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(true);
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-        String product = request.getParameter("product");
+        String product = request.getParameter("CartId");
         String quantity = request.getParameter("quantity");
 
-        if (session.getAttribute("cart") == null) {
+        
+        if (cart == null) {
             cart = new ShoppingCart();
             session.setAttribute("cart", cart);
         }
         ProductJpaController pjc = new ProductJpaController(utx, emf);
         Product onlyproduct = pjc.findByOnlyProduct(product);
+        
         for (int i = 0; i < Integer.parseInt(quantity); i++) {
             cart.add(onlyproduct);
         }
-        response.sendRedirect("NewProduct");
+        
+        
+        response.sendRedirect("Showcart");
+        return;
+        
         
     }
 

@@ -5,12 +5,14 @@
  */
 package elk.servlet;
 
+import elk.model.s.ShoppingCart;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -31,6 +33,22 @@ public class ShowcartServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        
+           HttpSession session =  request.getSession();
+           
+           if(session != null){
+                ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+                if(cart != null){
+                    request.setAttribute("Product", cart);
+                    getServletContext().getRequestDispatcher("/ShoppingCart.jsp").forward(request, response);
+                }else{
+                    request.setAttribute("msg", "Your cart is empty");
+                    getServletContext().getRequestDispatcher("/ShoppingCart.jsp").forward(request, response);
+                }
+                
+           }
+              
+           
+        
         }
         
 

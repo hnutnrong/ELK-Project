@@ -122,7 +122,9 @@
                                         <option value="4">4</option>
                                         <option value="5">5</option>
                                         </select ><br><br>
-                                        <input name="${p.productid}" class="btn btn-secondary" type="submit" value="Add To Cart" style="background-color: #cc0000;"></center>
+                                        <input name="CartId" value="${p.productid}" hidden>
+                                        <button type="submit" class="btn btn-info btn-lg">Add Cart</button>
+                                    </center>
                                 </form> 
                             </div>
                         </div>
