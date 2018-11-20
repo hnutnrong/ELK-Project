@@ -37,6 +37,8 @@ public class LineItem {
     }
     
     public Double getTotalPrice(){
+        System.out.println(this.salePrice);
+        System.out.println(this.quantity);
         return this.salePrice*this.quantity;//edited
     }
 

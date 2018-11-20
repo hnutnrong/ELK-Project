@@ -61,7 +61,7 @@ public class AddtocartServlet extends HttpServlet {
         }
         
         
-        response.sendRedirect("Showcart");
+        response.sendRedirect("NewProduct");
         return;
         
         

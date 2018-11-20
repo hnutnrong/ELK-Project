@@ -132,7 +132,7 @@
             <div class="card-footer">
                 <a href="HomepageView.jsp" class="btn btn-success pull-right">Pay now</a>
                 <div class="pull-right" style="margin: 5px">
-                    Total Price: <b>50.00$</b>
+                    Total Price: <b></b>
                 </div>
             </div>
         </div>
