@@ -123,7 +123,7 @@
                                         <option value="5">5</option>
                                         </select ><br><br>
                                         <input name="CartId" value="${p.productid}" hidden>
-                                        <button type="submit" class="btn btn-info btn-lg">Add Cart</button>
+                                        <button type="submit" class="btn btn-info btn-lg" style="background-color: #DC143C;">Add Cart</button>
                                     </center>
                                 </form> 
                             </div>

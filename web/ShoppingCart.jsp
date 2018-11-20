@@ -104,10 +104,10 @@
                     
                         <c:forEach items="${sessionScope.cart.lineItems}" var="p" varStatus="vs">
                         <div class="col-xs-2 col-md-2">
-                            <img class="img-responsive" src="elkproduct/b100.jpg" style="width: 120px;height: 120px" alt="preview">
+                            <img class="img-responsive" src="elkproduct/${p.product.model}.png" style="width: 120px;height: 120px" alt="preview">
                         </div>
                         <div class="col-xs-4 col-md-6">
-                            <h4 class="product-name"><strong>${p.product.productname}</strong></h4><h4><small>Product description</small></h4>
+                            <h4 class="product-name"><strong>${p.product.productname}</strong></h4><h4><small>${p.product.description}</small></h4>
                         </div>
                         <div class="col-xs-6 col-md-4 row">
                             <div class="col-xs-6 col-md-6 text-right" style="padding-top: 5px">

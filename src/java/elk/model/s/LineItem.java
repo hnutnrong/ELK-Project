@@ -5,8 +5,10 @@
  */
 package elk.model.s;
 
+import com.sun.org.glassfish.gmbal.Description;
 import elk.model.Product;
 import java.math.BigDecimal;
+import javax.enterprise.inject.Model;
 
 /**
  *
@@ -16,6 +18,8 @@ public class LineItem {
     Product product;
     double salePrice;
     int quantity;
+    Model model;
+    Description description;
 
     public LineItem() {
     }
@@ -24,8 +28,10 @@ public class LineItem {
         this.product = product;
         this.quantity = quantity;
         this.salePrice=product.getPrice();// edited
+        this.model=model;
+        this.description=description;
     }
-
+    
     public LineItem(Product product) {
         this(product,1);
     }
