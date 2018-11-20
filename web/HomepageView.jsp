@@ -35,14 +35,14 @@
         body, html {
 
             background-repeat: no-repeat;
-            background-image: url("image/car6.jpg");
+            background-color: #343a40!important;
         }
 
     </style>
     <body>
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">
-                <a href="index.html" class='fas fa-car-alt' style='font-size:30px;color:whitesmoke'></a>
+                <a href="index.html"><img src="image/logo2.png" width="50px" height="50px"></a>
                 <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -109,6 +109,7 @@
                 </div>
             </a>
         </nav>
+                                
         <!--Header-->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -124,7 +125,7 @@
                     <img class="d-block w-100" src="image/car16.jpg" alt="Second slide" style="height: 45em">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="image/car8.jpg"" alt="Third slide" style="height: 45em">
+                    <img class="d-block w-100" src="image/car8.jpg" alt="Third slide" style="height: 45em">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -137,9 +138,11 @@
             </a>
         </div>
         <!-- Portfolio Grid Section -->
+        <br>
+        
         <section class="portfolio" id="portfolio">
             <div class="container">
-                <h2 class="text-center text-uppercase text-secondary mb-0">ELK-S-Autopart</h2>
+               <h2 class="text-center text-uppercase text-secondary mb-0">ELK-S-Autopart</h2>
                 <hr class="star-dark mb-5">
                 <div class="row">
                     <div class="col-md-6 col-lg-4">

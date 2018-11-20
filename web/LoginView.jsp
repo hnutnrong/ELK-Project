@@ -247,7 +247,7 @@
         <div class="container">
             <div class="card card-container">
                 <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-                <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                <img id="profile-img" class="profile-img-card" src="image/logo3.png" style="width: 150px;height: 150px" />
                 <p id="profile-name" class="profile-name-card"></p>
 
                 <form action="NewLogin" method="post" class="form-signin">
@@ -261,9 +261,7 @@
                     </div>
                     <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
                 </form><!-- /form -->
-                <a href="#" class="forgot-password">
-                    Forgot the password?
-                </a>
+               
                 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
                 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                 ${msg}

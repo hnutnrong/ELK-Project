@@ -33,7 +33,7 @@
     <style>
         body, html{
             background-repeat: no-repeat;
-            background-image: url("image/car1.jpg");
+           background-color: #C0A08E;
             font-family: 'Oxygen', sans-serif;
         }
 
@@ -101,7 +101,8 @@
             <div class="row main">
                 <div class="panel-heading">
                     <div class="panel-title text-center">
-                        <h1 class="title">Register</h1>
+                    
+                        <h1 class="title" style="color: whitesmoke;text-shadow: black 0.1em 0.1em 0.2em">Register </h1>
                         <hr />
                     </div>
                 </div> 
@@ -145,7 +146,7 @@
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="lname" placeholder="Confirm your Lastname" required />
+                                    <input type="text" class="form-control" name="lname" placeholder="Enter your Lastname" required />
                                 </div>
                             </div>
                         </div>
@@ -155,7 +156,7 @@
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="number" class="form-control" name="telno" placeholder="Confirm your Telno" required />
+                                    <input type="number" class="form-control" name="telno" placeholder="Enter your Telno" required />
                                 </div>
                             </div>
                         </div>
@@ -165,7 +166,7 @@
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="email" placeholder="Confirm your Email" required />
+                                    <input type="text" class="form-control" name="email" placeholder="Enter your Email" required />
                                 </div>
                             </div>
                         </div>
@@ -175,7 +176,7 @@
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="address" placeholder="Confirm your Address" required />
+                                    <input type="text" class="form-control" name="address" placeholder="Enter your Address" required />
                                 </div>
                             </div>
                         </div>
