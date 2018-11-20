@@ -60,7 +60,7 @@ public class AddtocartServlet extends HttpServlet {
             cart.add(onlyproduct);
         }
         
-        
+        session.setAttribute("totalprice", cart.getTotalPrice());
         response.sendRedirect("NewProduct");
         return;
         
