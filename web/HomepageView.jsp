@@ -119,13 +119,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="image/car10.jpg" alt="First slide" style="height: 45em">
+                    <img class="d-block w-100" src="image/car18.jpg" alt="First slide" style="height: 45em">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="image/car16.jpg" alt="Second slide" style="height: 45em">
+                    <img class="d-block w-100" src="image/car13.jpg" alt="Second slide" style="height: 45em">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="image/car8.jpg" alt="Third slide" style="height: 45em">
+                    <img class="d-block w-100" src="image/car17.jpg" alt="Third slide" style="height: 45em">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
