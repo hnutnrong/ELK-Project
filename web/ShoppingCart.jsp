@@ -130,7 +130,7 @@
                    
             </div>
             <div class="card-footer">
-                <a href="HomepageView.jsp" class="btn btn-success pull-right">Pay now</a>
+                <a href="PaymentView.jsp" class="btn btn-outline-dark active pull-right" role="button" aria-pressed="true">Pay now</a>
                 <div class="pull-right" style="margin: 5px">
                     Total Price: <b>${sessionScope.totalprice}</b>
                 </div>
