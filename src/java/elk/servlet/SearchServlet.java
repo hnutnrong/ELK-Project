@@ -49,11 +49,12 @@ public class SearchServlet extends HttpServlet {
             String  search = request.getParameter("search");
                 if(search != null){
                     ProductJpaController pjc = new ProductJpaController(ut, emf);
-                    List<Product> Product = pjc.findByProductname(search);
-                    request.setAttribute("result", Product);
-                    if(Product.size()== 0){
+                    List<Product> product = pjc.findByProductname(search);
+                    System.out.println("----------NumOfProduct : "+product.size());
+                    request.setAttribute("result", product);
+                    if(product.size()== 0){
                         request.setAttribute("message", "Sorry, We Can't find Product !!!");
-                        
+                        System.out.println("----------Cannot Find-----");
                     }
                     getServletContext().getRequestDispatcher("/SearchResult.jsp").forward(request, response);
                                         
