@@ -31,7 +31,7 @@
        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">
                 <a href="index.html" class='fas fa-car-alt' style='font-size:30px;color:whitesmoke'></a>
-                <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
+                <a class="navbar-brand" href="HomepageView.jsp"  style="padding-left: 10px; font-family: Synchro LET; font-size: 40px; margin-top: 15px;">ELK</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -85,7 +85,7 @@
                        
                         </li>
                         <li class="nav-item">
-                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 600px">${sessionScope.cart.totalQuantity}</a>
+                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 500px">${sessionScope.cart.totalQuantity}</a>
                         </li>
                         <form action="Search" class="form-inline" style="margin-left: 20px">
                             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
