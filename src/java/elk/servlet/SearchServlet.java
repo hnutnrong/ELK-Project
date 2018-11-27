@@ -49,7 +49,7 @@ public class SearchServlet extends HttpServlet {
             String  search = request.getParameter("search");
                 if(search != null){
                     ProductJpaController pjc = new ProductJpaController(ut, emf);
-                    List<Product> product = pjc.findByProductname(search.toLowerCase());
+                    List<Product> product = pjc.findByProductname(search);
                     System.out.println("----------NumOfProduct : "+product.size());
                     request.setAttribute("result", product);
                     if(product.size()== 0){
