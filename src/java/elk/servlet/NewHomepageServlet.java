@@ -41,8 +41,8 @@ public class NewHomepageServlet extends HttpServlet {
                 return;
             }
 
+        
         }
-
         getServletContext().getRequestDispatcher("/HomepageView.jsp").forward(request, response);
 
     }
