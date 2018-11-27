@@ -57,7 +57,7 @@
                                 Product
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                 <a class="dropdown-item" href="NewProduct">Product all</a>
+                                 <a class="dropdown-item" href="NewProduct">All Products</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="NewProduct">Brake Pads</a>
                                 <div class="dropdown-divider"></div>
