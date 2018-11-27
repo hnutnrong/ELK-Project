@@ -103,7 +103,7 @@
 
                                 <c:if test="${sessionScope.LoggedIn!=null}">
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+                                        <a class="dropdown-item" href="HistoryView.jsp">History</a>
                                         <a class="dropdown-item" href="NewHomepage?logout=1">Logout</a>
 
 

@@ -28,7 +28,7 @@
 
     </style>
     <body>
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
+                <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">
                 <a href="index.html"><img src="image/logo2.png" width="50px" height="50px"></a>
                 <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
@@ -67,7 +67,7 @@
                         <li>
                             <div class="dropdown" style="padding-left: 20px">
                                 <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
-                                    <img src="image/icon.png" style="height: 30px">${sessionScope.LoggedIn == null ? "" : sessionScope.LoggedIn.fname}
+                                    <img src="image/icon.png" style="height: 30px">&nbsp; ${sessionScope.LoggedIn == null ? "" : sessionScope.LoggedIn.fname}
                                 </button>
                                 <c:if test="${sessionScope.LoggedIn==null}">
 
@@ -91,7 +91,7 @@
 
                                 <c:if test="${sessionScope.LoggedIn!=null}">
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+                                        <a class="dropdown-item" href="HistoryView.jsp">History</a>
                                         <a class="dropdown-item" href="NewHomepage?logout=1">Logout</a>
 
 

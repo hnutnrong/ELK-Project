@@ -1,25 +1,46 @@
 <%-- 
-    Document   : SearchResult
-    Created on : 16-Nov-2018, 12:28:21
+    Document   : HistoryView
+    Created on : 27-Nov-2018, 16:54:17
     Author     : Windows10
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <!-- Bootstrap core CSS -->
+        <link href="index/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- Custom fonts for this template -->
+        <link href="index/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+        <!-- Plugin CSS -->
+
+
+        <!-- Custom styles for this template -->
+        <link href="index/css/freelancer.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+    </head>
+     <style>
+        body, html {
 
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
+            background-repeat: no-repeat;
+            background-color: #727587;
+        }
+
+    </style>
+</head>
+    <body>
+                <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">
                 <a href="index.html"><img src="image/logo2.png" width="50px" height="50px"></a>
                 <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
@@ -99,34 +120,7 @@
 
 
         </nav>
-    <style>
-        body, html {
-
-            background-repeat: no-repeat;
-            background-color: #727587;
-        }
-
-    </style>
-    </head>
-    <body>
-       
-        <h2 style="margin-left: 35%"> ${message} </h2>
-        <div class="container">
-            <div class="row">
-    <c:forEach items="${result}" var="p">
-       <div class="col-sm-4" >
-                        <div class="card" style="margin-bottom: 15px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black; background-color: #9494b8;"  >
-                            <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block;border-radius: 50px; border: 2px solid black; margin-top: 15px; background-color: #b3b3cc;  "   ></center>
-                            <div class="card-body " >
-                                <center><h5 class="card-title">${p.productname}</h5></center>
-                                <p class="card-text">${p.description}</p>
-                                <p class="card-text">${p.price} ฿</p>
-                    
-                </div>
-            </div>
-        </div>
-    </c:forEach>
-            </div>
-        </div>
-</body>
+        <h1>History Page</h1><br>
+        <a href="HomepageView.jsp" class="btn btn-outline-dark btn-lg active" role="button" aria-pressed="true">back</a>
+    </body>
 </html>
