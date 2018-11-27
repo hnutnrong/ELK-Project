@@ -261,14 +261,16 @@
                     </div>
                     <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
                 </form><!-- /form -->
-               
+
                 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
                 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                 ${msg}
                 ${msg == "Invalid" ? '<script>swal("มีปัญหา", "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง","warning");</script>' : ''}
+                <center>
                 <div class="back">
-                    <a href="NewHomepage">Back</a>
+                    <a href="HomepageView.jsp" class="btn btn-outline-dark btn-lg active" role="button" aria-pressed="true">back</a>
                 </div>
+                </center>
             </div><!-- /card-container -->
         </div><!-- /container -->
 

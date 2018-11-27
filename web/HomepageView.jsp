@@ -52,14 +52,23 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="NewProduct">Product</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="ProductView.jsp" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Product
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="NewProduct">Product</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                         </li>
 
                         <li>
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
-                                    ${sessionScope.LoggedIn == null ? "MyAccount" : sessionScope.LoggedIn.fname}
+                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
+                                    <img src="image/icon.png" style="height: 30px">${sessionScope.LoggedIn == null ? "" : sessionScope.LoggedIn.fname}
                                 </button>
                                 <c:if test="${sessionScope.LoggedIn==null}">
 
@@ -67,7 +76,7 @@
 
                                         <a class="dropdown-item" href="NewLogin">Login</a>
                                         <a class="dropdown-item" href="Register">Register</a>
-                                       
+
 
                                     </div>
 
@@ -93,9 +102,7 @@
 
                             </div>
                         </li>
-                        <li>
-                       
-                        </li>
+                        
                         <li class="nav-item">
                             <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 600px"></a   >
                         </li>
@@ -103,13 +110,13 @@
                             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
-                         
+
 
                     </ul>
                 </div>
             </a>
         </nav>
-                                
+
         <!--Header-->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -139,10 +146,10 @@
         </div>
         <!-- Portfolio Grid Section -->
         <br>
-        
+
         <section class="portfolio" id="portfolio">
             <div class="container">
-               <h2 class="text-center text-uppercase text-secondary mb-0">ELK-S-Autopart</h2>
+                <h2 class="text-center text-uppercase text-secondary mb-0">ELK-S-Autopart</h2>
                 <hr class="star-dark mb-5">
                 <div class="row">
                     <div class="col-md-6 col-lg-4">

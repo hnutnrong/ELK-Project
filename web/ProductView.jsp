@@ -28,7 +28,7 @@
 
     </style>
     <body>
-       <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">
                 <a href="index.html"><img src="image/logo2.png" width="50px" height="50px"></a>
                 <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
@@ -38,16 +38,25 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown" style="padding-left: 20px">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="HomepageView.jsp">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="NewProduct">Product</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="ProductView.jsp" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Product
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="NewProduct">Product</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                         </li>
 
                         <li>
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
-                                    ${sessionScope.LoggedIn == null ? "MyAccount" : sessionScope.LoggedIn.fname}
+                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
+                                    <img src="image/icon.png" style="height: 30px">${sessionScope.LoggedIn == null ? "" : sessionScope.LoggedIn.fname}
                                 </button>
                                 <c:if test="${sessionScope.LoggedIn==null}">
 
@@ -55,7 +64,7 @@
 
                                         <a class="dropdown-item" href="NewLogin">Login</a>
                                         <a class="dropdown-item" href="Register">Register</a>
-                                       
+
 
                                     </div>
 
@@ -81,22 +90,19 @@
 
                             </div>
                         </li>
-                        <li>
-                       
-                        </li>
+
                         <li class="nav-item">
-                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 600px">${sessionScope.cart.totalQuantity}</a>
+                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 600px"></a   >
                         </li>
                         <form action="Search" class="form-inline" style="margin-left: 20px">
                             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
-                         
+
 
                     </ul>
                 </div>
             </a>
-                                
         </nav>
         <br>          
         <div style="background-color: #727587;color: white">
@@ -117,11 +123,11 @@
                                 <p class="card-text">${p.price} ฿</p>
                                 <form action="Addtocart">
                                     <center><select style=" background-color:#7575a3 ;padding: 5px; padding-left: 20px; padding-right: 20px" class="btn-secondary" name="quantity">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
                                         </select ><br><br>
                                         <input name="CartId" value="${p.productid}" hidden>
                                         <button type="submit" class="btn btn-info btn-lg" style="background-color: #DC143C;">Add Cart</button>
@@ -136,9 +142,9 @@
             </div>
         </div>
 
-       
-</div>
 
-    </body>
+    </div>
+
+</body>
 </html>
 
