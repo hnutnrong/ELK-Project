@@ -134,6 +134,7 @@
                                 </button>
                             </div>
                         </div>
+                                    
                     </c:forEach>
                 </div>
 
@@ -142,6 +143,7 @@
 
             </div>
             <div class="card-footer">
+                
                 <a href="PaymentView.jsp" class="btn btn-outline-dark active pull-right" role="button" aria-pressed="true">Pay now</a>
                 <div class="pull-right" style="margin: 5px">
                     Total Price: <b>${sessionScope.totalprice}</b>
