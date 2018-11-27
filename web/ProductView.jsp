@@ -96,6 +96,7 @@
                     </ul>
                 </div>
             </a>
+                                
         </nav>
         <br>          
         <div style="background-color: #727587;color: white">
@@ -135,7 +136,8 @@
             </div>
         </div>
 
-
+       
+</div>
 
     </body>
 </html>

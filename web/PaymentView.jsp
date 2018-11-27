@@ -205,7 +205,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Thank you For your Shopping order ^_^
+                                         Your Order Are Successful <img src="image/logo3.png" style="height: 50px">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
