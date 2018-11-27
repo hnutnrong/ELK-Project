@@ -95,15 +95,14 @@
         <div class="container">
             <div class="row">
     <c:forEach items="${result}" var="p">
-        <div class="col-sm-4" >
-            <div class="card" style="margin-bottom: 10px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black">
-                <img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 225px; width: 100%; display: block;border-radius: 50px; border: 2px solid black;">
-                <div class="card-body">
-                    <h5 class="card-title">${p.productid}</h5>
-                    <p class="card-text">${p.description}</p>
-                    <p class="card-text">${p.productname}</p>
-                    <p class="card-text">${p.price} ฿</p>
-                    <center><a href="YourCartView.jsp"  style="background-color: #4C4D54" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add to Cart</a></center>
+       <div class="col-sm-4" >
+                        <div class="card" style="margin-bottom: 15px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black; background-color: #9494b8;"  >
+                            <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block;border-radius: 50px; border: 2px solid black; margin-top: 15px; background-color: #b3b3cc;  "   ></center>
+                            <div class="card-body " >
+                                <center><h5 class="card-title">${p.productname}</h5></center>
+                                <p class="card-text">${p.description}</p>
+                                <p class="card-text">${p.price} ฿</p>
+                    
                 </div>
             </div>
         </div>
