@@ -25,10 +25,11 @@
 
         <script src="https://use.fontawesome.com/c560c025cf.js"></script>
     </head>
+    
     <body>
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">
-                <a href="index.html" class='fas fa-car-alt' style='font-size:30px;color:whitesmoke'></a>
+                <a href="index.html"><img src="image/logo2.png" width="50px" height="50px"></a>
                 <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -38,14 +39,34 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="NewProduct">Product</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="ProductView.jsp" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Product
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="NewProduct">Product all</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="NewProduct">Brake Pads</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Oil</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Battery</a>
+                            </div>
                         </li>
 
+
+
+                        <li class="nav-item">
+                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left:600px "></a>
+                        </li>
+                        <form action="Search" class="form-inline" style="margin-left: 20px">
+                            <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
                         <li>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
-                                    ${sessionScope.LoggedIn == null ? "MyAccount" : sessionScope.LoggedIn.fname}
+                            <div class="dropdown" style="padding-left: 20px">
+                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
+                                    <img src="image/icon.png" style="height: 30px">&nbsp; ${sessionScope.LoggedIn == null ? "" : sessionScope.LoggedIn.fname}
                                 </button>
                                 <c:if test="${sessionScope.LoggedIn==null}">
 
@@ -53,7 +74,7 @@
 
                                         <a class="dropdown-item" href="NewLogin">Login</a>
                                         <a class="dropdown-item" href="Register">Register</a>
-                                       
+
 
                                     </div>
 
@@ -79,30 +100,21 @@
 
                             </div>
                         </li>
-                        <li>
-                       
-                        </li>
-                        <li class="nav-item">
-                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 600px"></a   >
-                        </li>
-                        <form action="Search" class="form-inline" style="margin-left: 20px">
-                            <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                         
 
                     </ul>
+
                 </div>
-            </a>
+
+
         </nav>
         <div class="container"></div>
         <div class="card">
-            
+
             <div class="card-body">
-               
-                    <div class="row">
-                    
-                        <c:forEach items="${sessionScope.cart.lineItems}" var="p" varStatus="vs">
+
+                <div class="row">
+
+                    <c:forEach items="${sessionScope.cart.lineItems}" var="p" varStatus="vs">
                         <div class="col-xs-2 col-md-2">
                             <img class="img-responsive" src="elkproduct/${p.product.model}.png" style="width: 120px;height: 120px" alt="preview">
                         </div>
@@ -117,17 +129,17 @@
                                 <input type="text" class="form-control input-sm" value="${p.quantity}">
                             </div>
                             <div class="col-xs-2 col-md-2">
-                                <button onclick="window.location='Remove?page=cart&remove=${p.product.productid}'" type="button" class="btn btn-outline-danger btn-xs">
+                                <button onclick="window.location = 'Remove?page=cart&remove=${p.product.productid}'" type="button" class="btn btn-outline-danger btn-xs">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
-                             </c:forEach>
-                    </div>
-             
+                    </c:forEach>
+                </div>
 
-                    <hr>
-                   
+
+                <hr>
+
             </div>
             <div class="card-footer">
                 <a href="PaymentView.jsp" class="btn btn-outline-dark active pull-right" role="button" aria-pressed="true">Pay now</a>

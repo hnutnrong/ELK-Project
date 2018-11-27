@@ -45,16 +45,27 @@
                                 Product
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="NewProduct">Product</a>
+                                 <a class="dropdown-item" href="NewProduct">Product all</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="NewProduct">Brake Pads</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#">Oil</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Battery</a>
                             </div>
                         </li>
 
+
+
+                        <li class="nav-item">
+                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left:600px "></a>
+                        </li>
+                        <form action="Search" class="form-inline" style="margin-left: 20px">
+                            <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
                         <li>
-                            <div class="dropdown">
+                            <div class="dropdown" style="padding-left: 20px">
                                 <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
                                     <img src="image/icon.png" style="height: 30px">${sessionScope.LoggedIn == null ? "" : sessionScope.LoggedIn.fname}
                                 </button>
@@ -91,22 +102,15 @@
                             </div>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left: 600px"></a   >
-                        </li>
-                        <form action="Search" class="form-inline" style="margin-left: 20px">
-                            <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-
-
                     </ul>
+                   
                 </div>
-            </a>
+
+
         </nav>
         <br>          
         <div style="background-color: #727587;color: white">
-            <center>  <img src="image/logo3.png" width="400px" height="400px" ></center>
+            <center>  <img src="image/logo3.png" width="250px" height="250px" ></center>
             <center><h1>ELK'S Product</h1></center><hr>
         </div>
         <div class="container" >
