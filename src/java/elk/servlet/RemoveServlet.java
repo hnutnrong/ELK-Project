@@ -5,6 +5,9 @@
  */
 package elk.servlet;
 
+import elk.jpa.controller.ProductJpaController;
+import elk.model.Product;
+import elk.model.s.ShoppingCart;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.annotation.Resource;
@@ -39,7 +42,22 @@ public class RemoveServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
-            
+        String page = request.getParameter("page");
+            if(request.getParameter("remove")!= null){
+                
+                ProductJpaController produttJpa = new ProductJpaController(utx, emf);
+                Product p = produttJpa.findProduct(request.getParameter("remove"));
+                ShoppingCart cart = (ShoppingCart) request.getSession().getAttribute("cart");
+                cart.remove(p);
+                if(page.equalsIgnoreCase("cart")){
+                    request.setAttribute("cart", cart);
+                    request.getSession().setAttribute("totalprice", cart.getTotalPrice());
+                    response.sendRedirect("Showcart");
+                    return;
+                }
+            }
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

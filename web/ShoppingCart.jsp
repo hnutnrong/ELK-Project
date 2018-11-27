@@ -117,7 +117,7 @@
                                 <input type="text" class="form-control input-sm" value="${p.quantity}">
                             </div>
                             <div class="col-xs-2 col-md-2">
-                                <button type="button" class="btn btn-outline-danger btn-xs">
+                                <button onclick="window.location='Remove?page=cart&remove=${p.product.productid}'" type="button" class="btn btn-outline-danger btn-xs">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </button>
                             </div>
