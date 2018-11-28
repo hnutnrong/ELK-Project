@@ -103,7 +103,7 @@
         body, html {
 
             background-repeat: no-repeat;
-            background-color: #727587;
+            background-image: linear-gradient(to top,#FFA17F,#00223E);
                         font-family: 'Rye', cursive;
 
         }
@@ -119,9 +119,9 @@
             <div class="row">
     <c:forEach items="${result}" var="p">
        <div class="col-sm-4" >
-                        <div class="card" style="margin-bottom: 15px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black; background-color: #9494b8;"  >
-                            <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block;border-radius: 50px; border: 2px solid black; margin-top: 15px; background-color: #b3b3cc;  "   ></center>
-                            <div class="card-body " >
+<div class="card" style="margin-bottom: 15px;border: solid black; background-image: linear-gradient(to bottom,#654ea3,#ffdde1,#eaafc8);"  >
+<center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block; border: 2px solid black; margin-top: 15px; background-image: linear-gradient(to left,#FFA17F,#F8FFAE);  "   ></center>
+    <div class="card-body " >
                                 <center><h5 class="card-title">${p.productname}</h5></center>
                                 <p class="card-text">${p.description}</p>
                                 <p class="card-text">${p.price} ฿</p>

@@ -239,7 +239,7 @@
                 <c:forEach items="${product}" var="p" varStatus="vs" >
                     <div class="col-sm-4" >
                         <div class="card" style="margin-bottom: 15px;border: solid black; background-image: linear-gradient(to top,#FFA17F,#00223E);"  >
-                            <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block; border: 2px solid black; margin-top: 15px; background-image: linear-gradient(to left,#FFA17F,#00223E);  "   ></center>
+                            <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block; border: 2px solid black; margin-top: 15px; background-image: linear-gradient(to top,#FFA17F,#00223E);  "   ></center>
                             <div class="card-body " >
                                 <center><h5 class="card-title">${p.productname}</h5></center>
                                 <p class="card-text">${p.description}</p>
