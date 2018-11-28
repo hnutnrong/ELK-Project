@@ -6,16 +6,23 @@
 package elk.model;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -28,52 +35,65 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Orderlist.findAll", query = "SELECT o FROM Orderlist o")
     , @NamedQuery(name = "Orderlist.findByOrderno", query = "SELECT o FROM Orderlist o WHERE o.orderno = :orderno")
     , @NamedQuery(name = "Orderlist.findByOrderdate", query = "SELECT o FROM Orderlist o WHERE o.orderdate = :orderdate")
-    , @NamedQuery(name = "Orderlist.findByShippingmethod", query = "SELECT o FROM Orderlist o WHERE o.shippingmethod = :shippingmethod")})
+    , @NamedQuery(name = "Orderlist.findByTotalprice", query = "SELECT o FROM Orderlist o WHERE o.totalprice = :totalprice")})
 public class Orderlist implements Serializable {
+
+    @OneToMany(mappedBy = "orderno")
+    private List<Orderdetail> orderdetailList;
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
     @Column(name = "ORDERNO")
-    private String orderno;
-    @Size(max = 100)
+    private Integer orderno;
     @Column(name = "ORDERDATE")
-    private String orderdate;
-    @Size(max = 100)
-    @Column(name = "SHIPPINGMETHOD")
-    private String shippingmethod;
+    @Temporal(TemporalType.DATE)
+    private Date orderdate;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "TOTALPRICE")
+    private Double totalprice;
+    @JoinColumn(name = "ACCOUNTID", referencedColumnName = "ACCOUNTID")
+    @ManyToOne
+    private Account accountid;
 
     public Orderlist() {
     }
 
-    public Orderlist(String orderno) {
+    public Orderlist(Integer orderno) {
         this.orderno = orderno;
     }
 
-    public String getOrderno() {
+    public Integer getOrderno() {
         return orderno;
     }
 
-    public void setOrderno(String orderno) {
+    public void setOrderno(Integer orderno) {
         this.orderno = orderno;
     }
 
-    public String getOrderdate() {
+    public Date getOrderdate() {
         return orderdate;
     }
 
-    public void setOrderdate(String orderdate) {
+    public void setOrderdate(Date orderdate) {
         this.orderdate = orderdate;
     }
 
-    public String getShippingmethod() {
-        return shippingmethod;
+    public Double getTotalprice() {
+        return totalprice;
     }
 
-    public void setShippingmethod(String shippingmethod) {
-        this.shippingmethod = shippingmethod;
+    public void setTotalprice(Double totalprice) {
+        this.totalprice = totalprice;
+    }
+
+    public Account getAccountid() {
+        return accountid;
+    }
+
+    public void setAccountid(Account accountid) {
+        this.accountid = accountid;
     }
 
     @Override
@@ -99,6 +119,15 @@ public class Orderlist implements Serializable {
     @Override
     public String toString() {
         return "elk.model.Orderlist[ orderno=" + orderno + " ]";
+    }
+
+    @XmlTransient
+    public List<Orderdetail> getOrderdetailList() {
+        return orderdetailList;
+    }
+
+    public void setOrderdetailList(List<Orderdetail> orderdetailList) {
+        this.orderdetailList = orderdetailList;
     }
     
 }
