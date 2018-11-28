@@ -30,19 +30,110 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+        <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
     </head>
     <style>
         body, html {
 
             background-repeat: no-repeat;
-            background-color: #343a40!important;
+           background-image: linear-gradient(to top,#00223E,#00223E);
+            font-family: 'Rye', cursive;
         }
 
     </style>
+    <script>
+   //Here you can add your own picture for snow. Just change the url
+        var snowsrc = " http://i1208.photobucket.com/albums/cc361/Letthalicious/bluesnowrsz.png"
+   //how many snowflakes there will be (currently 12)
+        var no = 47;
+   //How fast will the snow disappear (0 is never)
+        var hidesnowtime = 0;
+   //The height the snow will reach before it disappears ("windowheight" or "pageheight")
+        var snowdistance = "pageheight";
+   ///////////////////////////////End of Settings///////////////////////////////////
+        var ie4up = (document.all) ? 1 : 0;
+        var ns6up = (document.getElementById && !document.all) ? 1 : 0;
+        function iecompattest()
+        {
+            return (document.compatMode && document.compatMode != "BackCompat") ? document.documentElement : document.body
+        }
+        var dx, xp, yp;
+        var am, stx, sty;
+        var i, doc_width = 800, doc_height = 600;
+        if (ns6up)
+        {
+            doc_width = self.innerWidth;
+            doc_height = self.innerHeight;
+        } else
+        if (ie4up)
+        {
+            doc_width = document.body.clientWidth;
+            doc_height = document.body.clientHeight;
+        }
+        dx = new Array();
+        xp = new Array();
+        yp = new Array();
+        am = new Array();
+        stx = new Array();
+        sty = new Array();
+        for (i = 0; i < no; ++i)
+        {
+            dx[i] = 0;
+            xp[i] = Math.random() * (doc_width - 50);
+            yp[i] = Math.random() * doc_height;
+            am[i] = Math.random() * 20;
+            stx[i] = 0.02 + Math.random() / 10;
+            sty[i] = 0.7 + Math.random();
+            if (ie4up || ns6up)
+            {
+                if (i == 0)
+                {
+                    document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://rftactical.darkbb.com/index.htm\"><img src='" + snowsrc + "' border=\"0\"><\/a><\/div>");
+                } else
+                {
+                    document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='" + snowsrc + "' border=\"0\"><\/div>");
+                }
+            }
+        }
+        function snowIE_NS6()
+        {
+            doc_width = ns6up ? window.innerWidth - 10 : iecompattest().clientWidth - 10;
+            doc_height = (window.innerHeight && snowdistance == "windowheight") ? window.innerHeight : (ie4up && snowdistance == "windowheight") ? iecompattest().clientHeight : (ie4up && !window.opera && snowdistance == "pageheight") ? iecompattest().scrollHeight : iecompattest().offsetHeight;
+            for (i = 0; i < no; ++i)
+            {
+                yp[i] += sty[i];
+                if (yp[i] > doc_height - 50)
+                {
+                    xp[i] = Math.random() * (doc_width - am[i] - 30);
+                    yp[i] = 0;
+                    stx[i] = 0.02 + Math.random() / 10;
+                    sty[i] = 0.7 + Math.random();
+                }
+                dx[i] += stx[i];
+                document.getElementById("dot" + i).style.top = yp[i] + "px";
+                document.getElementById("dot" + i).style.left = xp[i] + am[i] * Math.sin(dx[i]) + "px";
+            }
+            snowtimer = setTimeout("snowIE_NS6()", 10);
+        }
+        function hidesnow()
+        {
+            if (window.snowtimer)
+                clearTimeout(snowtimer)
+            for (i = 0; i < no; i++)
+                document.getElementById("dot" + i).style.visibility = "hidden"
+        }
+
+        if (ie4up || ns6up)
+        {
+            snowIE_NS6();
+            if (hidesnowtime > 0)
+                setTimeout("hidesnow()", hidesnowtime * 1000)
+        }
+    </script>
     <body>
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">
-                <a href="index.html"><img src="image/logo2.png" width="50px" height="50px"></a>
+                <a href="index.html"><img src="image/logo3.png" width="50px" height="50px"></a>
                 <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -57,7 +148,7 @@
                                 Product
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                 <a class="dropdown-item" href="NewProduct">All Products</a>
+                                <a class="dropdown-item" href="NewProduct">All Products</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="NewProduct">Brake Pads</a>
                                 <div class="dropdown-divider"></div>
@@ -66,6 +157,7 @@
                                 <a class="dropdown-item" href="#">Battery</a>
                             </div>
                         </li>
+
 
 
 
@@ -115,11 +207,12 @@
                         </li>
 
                     </ul>
-                   
+
                 </div>
 
 
         </nav>
+
 
         <!--Header-->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -130,13 +223,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="image/car18.jpg" alt="First slide" style="height: 45em">
+                    <img class="d-block w-100" src="image/change2.png" alt="First slide" >
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="image/car13.jpg" alt="Second slide" style="height: 45em">
+                    <img class="d-block w-100" src="image/change1.png" alt="Second slide" >
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="image/car17.jpg" alt="Third slide" style="height: 45em">
+                    <img class="d-block w-100" src="image/change3.png" alt="Third slide" >
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -148,12 +241,12 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+
         <!-- Portfolio Grid Section -->
-        <br>
 
         <section class="portfolio" id="portfolio">
             <div class="container">
-                <h2 class="text-center text-uppercase text-secondary mb-0">ELK-S-Autopart</h2>
+                <center><img src="image/title2.png" style="height: 250px"></center>
                 <hr class="star-dark mb-5">
                 <div class="row">
                     <div class="col-md-6 col-lg-4">

@@ -24,10 +24,17 @@
 
 
         <script src="https://use.fontawesome.com/c560c025cf.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
     </head>
+    <style>
+        body, html {
+            font-family: 'Rye', cursive;
+        }
+
+    </style>
     
     <body>
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
+ <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">
                 <a href="index.html"><img src="image/logo2.png" width="50px" height="50px"></a>
                 <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
@@ -44,11 +51,11 @@
                                 Product
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                 <a class="dropdown-item" href="NewProduct">Product all</a>
+                                 <a class="dropdown-item" href="NewProduct">All Products</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="NewProduct">Brake Pads</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Oil</a>
+                                <a class="dropdown-item" href="#">Engine Oil</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Battery</a>
                             </div>
@@ -61,7 +68,7 @@
                         </li>
                         <form action="Search" class="form-inline" style="margin-left: 20px">
                             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img src="image/search.png" style="height: 30px"></button>
                         </form>
                         <li>
                             <div class="dropdown" style="padding-left: 20px">
