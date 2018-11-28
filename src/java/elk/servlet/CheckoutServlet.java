@@ -113,7 +113,7 @@ public class CheckoutServlet extends HttpServlet {
                 request.setAttribute("success", "Checkout Success");
                 request.setAttribute("msg_checkout", "");
                 request.setAttribute("msg", "Your cart is empty!!!");
-                getServletContext().getRequestDispatcher("/PaymentView.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/HomepageView.jsp").forward(request, response);
                 
         }
         
