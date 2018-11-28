@@ -27,11 +27,13 @@ import javax.transaction.UserTransaction;
  * @author Administrator
  */
 public class HistoryServlet extends HttpServlet {
+
     @PersistenceUnit(unitName = "ElkfinalProjectPU")
     EntityManagerFactory emf;
-    
+
     @Resource
     UserTransaction utx;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -43,19 +45,27 @@ public class HistoryServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       HttpSession session = request.getSession(false);
-       Account accountSession = (Account) session.getAttribute("account");
+        HttpSession session = request.getSession(false);
+        Account accountSession = (Account) session.getAttribute("LoggedIn");
         AccountJpaController accountCtrl = new AccountJpaController(utx, emf);
-        Account findAccount = accountCtrl.findAccount(accountSession.getUsername());
-        List<Orderlist> accountOrders = findAccount.getOrderlistList();
-            if(accountOrders.isEmpty()){
+        Account findAccount = accountCtrl.findAccount(accountSession.getAccountid());
+
+        if (findAccount != null) {
+            List<Orderlist> accountOrders = findAccount.getOrderlistList();
+
+
+            if (accountOrders.isEmpty()) {
+
                 session.setAttribute("msg", "You didn't purchase anything");
                 getServletContext().getRequestDispatcher("/HistoryView.jsp").forward(request, response);
-            }else{
+            } else {
                 session.setAttribute("msg", "");
                 session.setAttribute("accountorders", accountOrders);
+
                 getServletContext().getRequestDispatcher("/HistoryView.jsp").forward(request, response);
             }
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
