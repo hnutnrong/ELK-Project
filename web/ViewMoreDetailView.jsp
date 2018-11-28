@@ -1,6 +1,6 @@
 <%-- 
     Document   : ViewMoreDetailView
-    Created on : Nov 28, 2018, 9:26:58 PM
+    Created on : Nov 29, 2018, 12:22:54 AM
     Author     : Administrator
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <h1>Hello World!</h1>
     </body>
 </html>

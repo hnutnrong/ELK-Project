@@ -141,7 +141,8 @@
                 <td>${p.orderno}</td>
                 <td>${p.orderdate}</td>
                 <td>${p.totalprice}</td>
-                <td><a href="ViewMoreDetailView.jsp">View MoreDetail</a></td>
+                
+                <td><a href="ViewMoreDetail?orderid=${p.orderno}">View MoreDetail</a></td>
             </tr>     
 
 
