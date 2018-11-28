@@ -23,7 +23,7 @@
         body, html {
 
             background-repeat: no-repeat;
-            background-color: #727587;
+            background-image: linear-gradient(to top,#FFA17F,#00223E);
         }
 
     </style>
@@ -109,7 +109,7 @@
 
         </nav>
         <br>          
-        <div style="background-color: #727587;color: white">
+        <div style="background-color: #3366996;color: white">
             <center>  <img src="image/logo3.png" width="250px" height="250px" ></center>
             <center><h1>ELK'S Product</h1></center><hr>
         </div>
@@ -119,8 +119,8 @@
 
                 <c:forEach items="${product}" var="p" varStatus="vs" >
                     <div class="col-sm-4" >
-                        <div class="card" style="margin-bottom: 15px;background-color: #C0A08E;border-radius: 50px;border: 2px solid black; background-color: #9494b8;"  >
-                            <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block;border-radius: 50px; border: 2px solid black; margin-top: 15px; background-color: #b3b3cc;  "   ></center>
+                        <div class="card" style="margin-bottom: 15px;border: solid black; background-image: linear-gradient(to top,#FFA17F,#00223E);"  >
+                            <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block; border: 2px solid black; margin-top: 15px; background-image: linear-gradient(to left,#FFA17F,#00223E);  "   ></center>
                             <div class="card-body " >
                                 <center><h5 class="card-title">${p.productname}</h5></center>
                                 <p class="card-text">${p.description}</p>
