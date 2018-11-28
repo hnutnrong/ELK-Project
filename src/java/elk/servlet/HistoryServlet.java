@@ -5,18 +5,34 @@
  */
 package elk.servlet;
 
+import elk.jpa.controller.AccountJpaController;
+import elk.model.Account;
+import elk.model.Orderlist;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+import javax.persistence.criteria.Order;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
 
 /**
  *
  * @author Administrator
  */
 public class HistoryServlet extends HttpServlet {
+
+    @PersistenceUnit(unitName = "ElkfinalProjectPU")
+    EntityManagerFactory emf;
+
+    @Resource
+    UserTransaction utx;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,9 +45,27 @@ public class HistoryServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        
-        
+        HttpSession session = request.getSession(false);
+        Account accountSession = (Account) session.getAttribute("LoggedIn");
+        AccountJpaController accountCtrl = new AccountJpaController(utx, emf);
+        Account findAccount = accountCtrl.findAccount(accountSession.getAccountid());
+
+        if (findAccount != null) {
+            List<Orderlist> accountOrders = findAccount.getOrderlistList();
+
+
+            if (accountOrders.isEmpty()) {
+
+                session.setAttribute("msg", "You didn't purchase anything");
+                getServletContext().getRequestDispatcher("/HistoryView.jsp").forward(request, response);
+            } else {
+                session.setAttribute("msg", "");
+                session.setAttribute("accountorders", accountOrders);
+
+                getServletContext().getRequestDispatcher("/HistoryView.jsp").forward(request, response);
+            }
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

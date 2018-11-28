@@ -187,6 +187,7 @@
                                     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
                                     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                                     ${msg == "Invalid" ? '<script>swal("มีปัญหา", "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง","warning");</script>' : ''}
+                                    ${param.success == "1" ? '<script>swal("finish", "ลงทะเบียนสำเร็จ","success");</script>' : ''}
                                 </c:if>
 
 
@@ -195,7 +196,7 @@
 
                                 <c:if test="${sessionScope.LoggedIn!=null}">
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="HistoryView.jsp">History</a>
+                                        <a class="dropdown-item" href="History">History</a>
                                         <a class="dropdown-item" href="NewHomepage?logout=1">Logout</a>
 
 
@@ -270,7 +271,7 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <a class="portfolio-item d-block mx-auto" href="index.html">
+                        <a class="portfolio-item d-block mx-auto" href="ContactView.jsp">
                             <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                                 <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
                                     <i class="fas fa-search-plus fa-3x"></i>
@@ -283,7 +284,6 @@
                 </div>
             </div>
         </section>
-
 
         <footer>
             <div class="copyright py-4 text-center text-white">
