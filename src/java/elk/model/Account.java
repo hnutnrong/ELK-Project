@@ -6,16 +6,19 @@
 package elk.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -35,6 +38,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Account.findByEmail", query = "SELECT a FROM Account a WHERE a.email = :email")
     , @NamedQuery(name = "Account.findByAddress", query = "SELECT a FROM Account a WHERE a.address = :address")})
 public class Account implements Serializable {
+
+    @OneToMany(mappedBy = "accountid")
+    private List<Orderlist> orderlistList;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -170,6 +176,15 @@ public class Account implements Serializable {
     @Override
     public String toString() {
         return "elk.model.Account[ accountid=" + accountid + " ]";
+    }
+
+    @XmlTransient
+    public List<Orderlist> getOrderlistList() {
+        return orderlistList;
+    }
+
+    public void setOrderlistList(List<Orderlist> orderlistList) {
+        this.orderlistList = orderlistList;
     }
     
 }

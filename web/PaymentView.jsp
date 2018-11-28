@@ -209,7 +209,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                         <a href="HomepageView.jsp" class="btn btn-outline-dark active" role="button" aria-pressed="true">Ok</a>
+                                         <a href="Checkout" class="btn btn-outline-dark active" role="button" aria-pressed="true">Ok</a>
                                     </div>
                                 </div>
                             </div>
