@@ -33,7 +33,7 @@
     <style>
         body, html{
             background-repeat: no-repeat;
-           background-color: #C0A08E;
+            background-image: linear-gradient(to top,#FFA17F,#00223E);
             font-family: 'Oxygen', sans-serif;
         }
 
