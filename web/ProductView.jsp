@@ -24,6 +24,7 @@
 
             background-repeat: no-repeat;
             background-image: linear-gradient(to top,#FFA17F,#00223E);
+            
         }
 
     </style>
@@ -265,7 +266,7 @@
         </div>
 
 
-    </div>
+   
 
 </body>
 </html>
