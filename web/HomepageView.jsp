@@ -363,37 +363,33 @@
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <a class="portfolio-item d-block mx-auto" href="HomepageView.jsp">
-                                <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                                                                    </div>
+                                <div class="portfolio-item-caption d-flex position-absolute h-100 w-100"> </div>
+                                                                
                                 <img class="img-fluid" src="image/icon2.jpg" alt="" >
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <a class="portfolio-item d-block mx-auto" href="NewProduct">
-                                <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                                    <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                        <i class="fas fa-search-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="image/car6.jpg" alt="">
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <a class="portfolio-item d-block mx-auto" href="ContactView.jsp">
                                 <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                                    <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                        <i class="fas fa-search-plus fa-3x"></i>
-                                    </div>
+                                    
                                 </div>
-                                <img class="img-fluid" src="image/car1.jpg" alt="">
+                                <img class="img-fluid" src="image/icon3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <a class="portfolio-item d-block mx-auto" href="ContactUsView.jsp">
+                                <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                                   
+                                </div>
+                                <img class="img-fluid" src="image/icon4.jpg" alt="">
                             </a>
                         </div>
 
                     </div>
                 </div>
             </section>
-
-            <footer>
+            <br><br>
+            <footer >
                 <div class="copyright py-4 text-center text-white">
                     <div class="container" style="height: 92px">
                         <small>Copyright &copy; <a href="https://www.pexels.com">https://www.pexels.com</a> ELS-S-Autopart</small>

@@ -29,7 +29,7 @@
     </head>
     <style>
         body, html {
-
+          
             background-image: linear-gradient(to top,#00223E,#00223E);
 
         }
