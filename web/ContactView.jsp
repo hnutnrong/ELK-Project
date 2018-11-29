@@ -270,7 +270,7 @@
 
 
                         <li class="nav-item">
-                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left:600px "></a>
+                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left:600px ">{sessionScope.cart.totalQuantity}</a>
                         </li>
                         <form action="Search" class="form-inline" style="margin-left: 20px">
                             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
