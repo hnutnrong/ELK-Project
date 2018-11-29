@@ -25,7 +25,7 @@
         <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
         <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
     </head>
     <style>
         body, html {
@@ -367,7 +367,7 @@
             <center>  <img src="image/logo3.png" width="300px" height="300px" >&nbsp<img src="image/title2.png" style="height: 230px"></center>
 
 
-            <div class="container" >
+            <div class="container" style="font-family: 'Archivo Narrow', sans-serif;" >
                 <div class="row"  >
 
 
