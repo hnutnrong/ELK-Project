@@ -344,13 +344,13 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="image/change7.png" alt="First slide" >
+                                <img class="d-block w-100" src="image/change14.png" alt="First slide" >
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="image/change8.png" alt="Second slide" >
+                                <img class="d-block w-100" src="image/change13.png" alt="Second slide" >
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="image/change9.png" alt="Third slide" >
+                                <img class="d-block w-100" src="image/change12.png" alt="Third slide" >
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -364,16 +364,19 @@
                     </div>
                 </center>
             </div>
-            <center>  <img src="image/logo3.png" width="300px" height="300px" >&nbsp<img src="image/title4.png" style="height: 230px"></center>
+            <center>  <img src="image/logo3.png" width="300px" height="300px" ><img src="image/title4.png" style="height: 230px"></center>
 
 
 
-        </div>
+        
         <div class="container">
             <div class="row">                   
 
                 <div class="card" style="margin-top: 15px;margin-left:100px; width: 18rem;border: solid black; background-image: linear-gradient(to top,#FFA17F,#00223E);"  >
+                    <br>
+                    <br>
                     <center><img class="card-img-top" src="image/person1.png" alt="Card image cap" background-image: linear-gradient(to top,#FFA17F,#00223E); " ></center>
+
                     <div class="card-body">
                         <center><h5 class="card-title">Prapawit Prasoppanit</h5></center>
                         <center><h5 class="card-title">ID: 60130500051</h5></center>
@@ -383,7 +386,10 @@
                     </div>
                 </div>
                 <div class="card" style="margin-top: 15px;margin-left: 50px; width: 18rem;border: solid black; background-image: linear-gradient(to top,#FFA17F,#00223E);"  >
+                    <br>
+                    <br>
                     <center><img class="card-img-top" src="image/person2.png" alt="Card image cap" background-image: linear-gradient(to top,#FFA17F,#00223E); " ></center>
+
                     <div class="card-body">
                         <center><h5 class="card-title">Natchanon Kherlao</h5></center>
                         <center><h5 class="card-title">ID: 60130500028</h5></center>
@@ -393,7 +399,10 @@
                     </div>
                 </div>
                 <div class="card" style="margin-top: 15px;margin-left: 50px; width: 18rem;border: solid black; background-image: linear-gradient(to top,#FFA17F,#00223E);"  >
-                    <center><img class="card-img-top" src="image/nut.jpg" alt="Card image cap" style="height: 380px; width: 250px; background-image: linear-gradient(to top,#FFA17F,#00223E); " ></center>
+                    <br>
+                    <br>
+                    <center><img class="card-img-top" src="image/person3.png" alt="Card image cap" background-image: linear-gradient(to top,#FFA17F,#00223E); " ></center>
+
                     <div class="card-body">
                         <center><h5 class="card-title">Nutnarong Yukittichai</h5></center>
                         <center><h5 class="card-title">ID: 60130500026</h5></center>
@@ -405,6 +414,9 @@
             </div>
 
         </div>
+        <br>
+        <br>
+</div>
 
 
 
