@@ -73,6 +73,8 @@ public class RegisterServlet extends HttpServlet {
                     response.sendRedirect("HomepageView.jsp?success=1");
                     return;
                 
+            } else{
+                request.setAttribute("EmailnotNull", "1");
             }
             getServletContext().getRequestDispatcher("/RegisterView.jsp").forward(request, response);
             return;

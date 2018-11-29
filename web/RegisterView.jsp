@@ -283,6 +283,8 @@
                 </div>
             </div>
         </div>
+                  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        ${EmailnotNull == "1" ? '<script>swal("มีปัญหา", "Username นี้ถูกใช้ไปแล้ว","warning");</script>' : ''}
 
         <script type="text/javascript" src="assets/js/bootstrap.js"></script>
 
