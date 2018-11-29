@@ -284,7 +284,7 @@
         </div>
 
     </body>
-    <style>
+<!--    <style>
         hr {border-top: 1px solid #000; width:50%;}
 
         a {color: #000;}
@@ -302,5 +302,5 @@
             text-decoration: none;
 
         }
-    </style>
+    </style>-->
 </html>
