@@ -32,6 +32,10 @@
             background-repeat: no-repeat;
             background-color: #727587;
         }
+        .table{
+            text-align: center;
+            background-color: cornsilk;
+        }
         .navbabe{
             font-family: 'Concert One', cursive;
         }
@@ -331,7 +335,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="image/change10.png" alt="First slide" >
+                    <img class="d-block w-100" src="image/change14.png" alt="First slide" >
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="image/change13.png" alt="Second slide" >
