@@ -137,11 +137,11 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                  <a class="dropdown-item" href="NewProduct">Product all</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="NewProduct">Brake Pads</a>
+                                <a class="dropdown-item" href="Category?catid=cat001">Brake Pads</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Oil</a>
+                                <a class="dropdown-item" href="Category?catid=cat002">Oil</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Battery</a>
+                                <a class="dropdown-item" href="Category?catid=cat003">Battery</a>
                             </div>
                         </li>
 
