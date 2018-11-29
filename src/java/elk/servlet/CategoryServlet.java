@@ -5,18 +5,33 @@
  */
 package elk.servlet;
 
+import elk.jpa.controller.CategoryJpaController;
+import elk.jpa.controller.ProductJpaController;
+import elk.model.Category;
+import elk.model.Product;
+import static elk.model.Product_.catid;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.UserTransaction;
 
 /**
  *
  * @author Administrator
  */
 public class CategoryServlet extends HttpServlet {
+    @PersistenceUnit(unitName = "ElkfinalProjectPU")
+    EntityManagerFactory emf;
+    
+    @Resource
+    UserTransaction utx;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,20 +44,27 @@ public class CategoryServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CategoryServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CategoryServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        ProductJpaController prodJpa = new ProductJpaController(utx, emf);
+        List<Product> product = prodJpa.findProductEntities();
+        
+        if (request.getParameter("catid")!=null) {
+            System.out.println(request.getParameter("catid"));
+            CategoryJpaController categoryJpa = new CategoryJpaController(utx,emf);
+            Category category = categoryJpa.findCategory(request.getParameter("catid"));
+            List<Product> catid = prodJpa.findProductByCat(category);
+            System.out.println("catid");
+            request.setAttribute("catidresult", catid);
+            
+            getServletContext().getRequestDispatcher("/CategoryResult.jsp").forward(request, response);
+            return ;
         }
+        if (product !=null) {
+            request.setAttribute("product", product);
+            
+        }
+        getServletContext().getRequestDispatcher("/ProductView.jsp").forward(request, response);
     }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
