@@ -1,9 +1,8 @@
 <%-- 
-    Document   : ProductView
-    Created on : Nov 15, 2018, 4:25:59 PM
+    Document   : CategoryResult
+    Created on : Nov 29, 2018, 12:58:01 AM
     Author     : Books
 --%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -128,7 +127,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown" style="padding-left: 20px">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="HomepageView.jsp">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle " href="ProductView.jsp" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -235,8 +234,9 @@
         <div class="container" >
             <div class="row"  >
 
-
-                <c:forEach items="${product}" var="p" varStatus="vs" >
+                   
+                <c:forEach items="${catidresult}" var="p" varStatus="vs" >
+                    
                     <div class="col-sm-4" >
                         <div class="card" style="margin-bottom: 15px;border: solid black; background-image: linear-gradient(to top,#FFA17F,#00223E);"  >
                             <center><img class="card-img-top" src="elkproduct/${p.model}.png" alt="Card image cap" style="height: 250px; width: 270px; display: block; border: 2px solid black; margin-top: 15px; background-image: linear-gradient(to top,#FFA17F,#00223E);  "   ></center>
