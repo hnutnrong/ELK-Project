@@ -168,6 +168,7 @@
             <a href="RegisterView.jsp">Register</a>
             <a href="LoginView.jsp">Login</a>
             <a href="ProductView.jsp">Product</a>
+            <a href="ContactView.jsp.jsp">Contact</a>
         </div>
 
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
