@@ -16,7 +16,9 @@
         
          <table class="table">
         <tr>
+            
             <th>ORDERNO</th>
+            <th>PRODUCTCODE</th>
             <th>QUANTITY</th>
             <th>PRICE</th>
                         
@@ -25,7 +27,9 @@
         <c:forEach items="${orderDetail}" var="p">
             
              <tr>
+                
                 <td>${p.orderno.orderno}</td>
+                <td>${p.productcode}</td>
                 <td>${p.quantity}</td>
                 <td>${p.price}</td>
                                
