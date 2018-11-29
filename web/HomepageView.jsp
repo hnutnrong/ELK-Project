@@ -204,7 +204,7 @@
         var myVar;
 
         function myFunction() {
-            myVar = setTimeout(showPage, 3000);
+            myVar = setTimeout(showPage, 1100);
         }
 
         function showPage() {
@@ -362,13 +362,10 @@
                     <hr class="star-dark mb-5">
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
-                            <a class="portfolio-item d-block mx-auto" href="RegisterView.jsp">
+                            <a class="portfolio-item d-block mx-auto" href="HomepageView.jsp">
                                 <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                                    <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                        <i class="fas fa-search-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="image/car4.jpg" alt="" style="width: 650px">
+                                                                    </div>
+                                <img class="img-fluid" src="image/icon2.jpg" alt="" >
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-4">
