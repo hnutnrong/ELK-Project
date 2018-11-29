@@ -198,26 +198,7 @@
                 transform: scale(1);
             }
         }
-        function snowIE_NS6()
-        {
-            doc_width = ns6up ? window.innerWidth - 10 : iecompattest().clientWidth - 10;
-            doc_height = (window.innerHeight && snowdistance == "windowheight") ? window.innerHeight : (ie4up && snowdistance == "windowheight") ? iecompattest().clientHeight : (ie4up && !window.opera && snowdistance == "pageheight") ? iecompattest().scrollHeight : iecompattest().offsetHeight;
-            for (i = 0; i < no; ++i)
-            {
-                yp[i] += sty[i];
-                if (yp[i] > doc_height - 50)
-                {
-                    xp[i] = Math.random() * (doc_width - am[i] - 30);
-                    yp[i] = 0;
-                    stx[i] = 0.02 + Math.random() / 10;
-                    sty[i] = 0.7 + Math.random();
-                }
-                dx[i] += stx[i];
-                document.getElementById("dot" + i).style.top = yp[i] + "px";
-                document.getElementById("dot" + i).style.left = xp[i] + am[i] * Math.sin(dx[i]) + "px";
-            }
-            snowtimer = setTimeout("snowIE_NS6()", 10);
-        }
+      
         .navbabe{
             font-family: 'Concert One', cursive;
         }
