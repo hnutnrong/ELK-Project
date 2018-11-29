@@ -114,6 +114,19 @@ public class ProductJpaController implements Serializable {
             }
         }
     }
+    public List<Product> findProductByCat(Category catid){
+        EntityManager em =getEntityManager();
+        try{
+            Query q =em.createNamedQuery("Product.findByCatid");
+            q.setParameter("catid", catid);
+            return q.getResultList();
+        }catch (NoResultException book) {
+            return null;
+            
+        }finally{
+            em.close();
+        }
+    }
 
     public void destroy(String id) throws NonexistentEntityException, RollbackFailureException, Exception {
         EntityManager em = null;
