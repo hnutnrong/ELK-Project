@@ -13,7 +13,7 @@
               type="image/png" 
               href="image/logo3.png" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Elk-S-Autopart</title>
         <!-- Bootstrap core CSS -->
 
         <link href="index/css/freelancer.min.css" rel="stylesheet">
@@ -24,13 +24,17 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
         <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+
     </head>
     <style>
         body,html {
             font-family: "Lato", sans-serif;
             background-image: linear-gradient(to top,#00223E,#00223E);
         }
-
+         .navbabe{
+            font-family: 'Concert One', cursive;
+        }
         .sidenav {
             font-family: 'Lobster Two', cursive;
             height: 100%;
@@ -218,91 +222,94 @@
             <a href="LoginView.jsp">Login</a>
             <a href="ProductView.jsp">Product</a>
             <a href="ContactView.jsp">Contact</a>
+            <a href="AboutView.jsp">About Us</a>
+
         </div>
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
-            <a class="navbar-brand" href="#">
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()"> <img src="image/logo3.png " style="height: 50px"></span>
-                <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px">ELK-S-Autopart</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown" style="padding-left: 20px">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="HomepageView.jsp">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle " href="ProductView.jsp" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Product
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="NewProduct">All Products</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="Category?catid=cat001">Brake Pads</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="Category?catid=cat002">Engine Oil</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="Category?catid=cat003">Battery</a>
-                            </div>
-                        </li>
+        <div class="navbabe">
+            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark justify-content-between">
+                <a class="navbar-brand" href="#">
+                    <span style="font-size:30px;cursor:pointer" onclick="openNav()"> <img src="image/logo3.png " style="height: 70px"></span>
+                    <a class="navbar-brand" href="HomepageView.jsp" style="padding-left: 5px;font-size: 25px">ELK-S-Autopart</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown" style="padding-left: 20px">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="HomepageView.jsp">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle " href="ProductView.jsp" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Product
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="NewProduct">All Products</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="Category?catid=cat001">Brake Pads</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="Category?catid=cat002">Engine Oil</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="Category?catid=cat003">Battery</a>
+                                    
+                                </div>
+                            </li>
 
 
 
 
-                        <li class="nav-item">
-                            <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left:600px "></a>
-                        </li>
-                        <form action="Search" class="form-inline" style="margin-left: 20px">
-                            <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img src="image/search.png" style="height: 30px"></button>
-                        </form>
-                        <li>
-                            <div class="dropdown" style="padding-left: 20px">
-                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
-                                    <img src="image/icon.png" style="height: 30px">&nbsp; ${sessionScope.LoggedIn == null ? "" : sessionScope.LoggedIn.fname}
-                                </button>
-                                <c:if test="${sessionScope.LoggedIn==null}">
+                            <li class="nav-item">
+                                <a href="ShoppingCart.jsp" class='fas fa-shopping-cart' style="font-size:24px;color: white;padding-top: 10px;padding-left:600px "></a>
+                            </li>
+                            <form action="Search" class="form-inline" style="margin-left: 20px">
+                                <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img src="image/search.png" style="height: 30px"></button>
+                            </form>
+                            <li>
+                                <div class="dropdown" style="padding-left: 20px">
+                                    <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> 
+                                        <img src="image/icon.png" style="height: 30px">&nbsp; ${sessionScope.LoggedIn == null ? "" : sessionScope.LoggedIn.fname}
+                                    </button>
+                                    <c:if test="${sessionScope.LoggedIn==null}">
 
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                                        <a class="dropdown-item" href="NewLogin">Login</a>
-                                        <a class="dropdown-item" href="Register">Register</a>
-
-
-                                    </div>
+                                            <a class="dropdown-item" href="NewLogin">Login</a>
+                                            <a class="dropdown-item" href="Register">Register</a>
 
 
-                                    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-                                    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                                    ${msg == "Invalid" ? '<script>swal("มีปัญหา", "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง","warning");</script>' : ''}
-                                    ${param.success == "1" ? '<script>swal("finish", "ลงทะเบียนสำเร็จ","success");</script>' : ''}
-                                </c:if>
+                                        </div>
 
 
+                                        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+                                        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                                        ${msg == "Invalid" ? '<script>swal("มีปัญหา", "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง","warning");</script>' : ''}
+                                        ${param.success == "1" ? '<script>swal("finish", "ลงทะเบียนสำเร็จ","success");</script>' : ''}
+                                    </c:if>
 
 
 
-                                <c:if test="${sessionScope.LoggedIn!=null}">
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="History">History</a>
-                                        <a class="dropdown-item" href="NewHomepage?logout=1">Logout</a>
 
 
-                                    </div>
-
-                                </c:if>
-
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </div>
+                                    <c:if test="${sessionScope.LoggedIn!=null}">
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="History">History</a>
+                                            <a class="dropdown-item" href="NewHomepage?logout=1">Logout</a>
 
 
-        </nav>
+                                        </div>
+
+                                    </c:if>
+
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
 
 
+            </nav>
+        </div>
         <!--Header-->
         <div class="container">
             <div class="row">

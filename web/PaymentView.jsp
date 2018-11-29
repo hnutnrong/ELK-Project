@@ -131,17 +131,17 @@
         <div class="row">
             <div class="col-75">
                 <div class="container">
-                    <form action="/action_page.php">
+                    <form action="" id="bank">
 
                         <div class="row">
                             <div class="col-50">
                                 <h3>Billing Address</h3>
                                 <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                                <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                                <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required="">
                                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                                <input type="text" id="email" name="email" placeholder="john@example.com">
+                                <input type="text" id="email" name="email" placeholder="john@example.com" required="">
                                 <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" required="">
                                 <label for="city"><i class="fa fa-institution"></i> City</label>
                                 <input type="text" id="city" name="city" placeholder="New York">
 
@@ -188,12 +188,13 @@
                         <label>
                             <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                         </label>
-                       
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+                        Button trigger modal 
+                        <button id="OkCheck" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Check Out
                         </button>
-                        
+
+
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -205,11 +206,12 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                         Your Order Are Successful <img src="image/logo3.png" style="height: 50px">
+                                        Your Order Are Successful <img src="image/logo3.png" style="height: 50px">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                         <a href="Checkout" class="btn btn-outline-dark active" role="button" aria-pressed="true">Ok</a>
+                                        <a href="Checkout" class="btn btn-outline-dark active" role="button" aria-pressed="true">Ok</a>
+                                        <!--                                            <input type="submit" class="btn btn-outline-dark active" data-target="#exampleModal" value="OK"> -->
                                     </div>
                                 </div>
                             </div>
@@ -220,4 +222,31 @@
 
         </div>
     </body>
+
+    <script>
+
+        $(document).ready(function () {
+             document.getElementById("OkCheck").disabled = true;
+        $("#bank").change(function () {
+        if (
+                $("#fname").val() == ""
+                ||
+                $("#email").val() == ""
+                ||
+                $("#adr").val() == ""
+                ||
+                $("#city").val() == ""
+                ||
+                $("#state").val() == ""
+                ||
+                $("#zip").val() == ""
+                
+                ){
+            document.getElementById("OkCheck").disabled = true;
+                } else {
+                     document.getElementById("OkCheck").disabled = false;
+                }
+        });
+        })
+    </script>
 </html>

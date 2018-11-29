@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <!------ Include the above in your HEAD tag ---------->
@@ -32,7 +32,6 @@
     </head>
     <style>
         body, html{
-            background-repeat: no-repeat;
             background-image: linear-gradient(to top,#FFA17F,#00223E);
             font-family: 'Oxygen', sans-serif;
         }
@@ -101,7 +100,7 @@
             <div class="row main">
                 <div class="panel-heading">
                     <div class="panel-title text-center">
-                    
+
                         <h1 class="title" style="color: whitesmoke;text-shadow: black 0.1em 0.1em 0.2em">Register </h1>
                         <hr />
                     </div>
@@ -109,7 +108,7 @@
                 <div class="main-login main-center">
                     <form class="form-horizontal" action="Register" method="post">
 
-                      
+
 
                         <div class="form-group">
                             <label for="email" class="cols-sm-2 control-label">Username</label>
@@ -150,7 +149,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="confirm" class="cols-sm-2 control-label">Telno</label>
                             <div class="cols-sm-10">
@@ -160,7 +159,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="confirm" class="cols-sm-2 control-label">Email</label>
                             <div class="cols-sm-10">
@@ -170,7 +169,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="confirm" class="cols-sm-2 control-label">Address</label>
                             <div class="cols-sm-10">
@@ -182,18 +181,21 @@
                         </div>
 
                         <div class="form-group ">
-                            
+
                             <input type="submit" value="Register" class="btn btn-primary btn-lg btn-block login-button">
                         </div>
                         <div class="login-register">
                             <a href="LoginView.jsp" class="btn btn-outline-dark btn-lg active" role="button" aria-pressed="true">Login</a>
+
+                            <a href="HomepageView.jsp" class="btn btn-outline-dark btn-lg active" role="button" aria-pressed="true">back</a>
+
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        
+
         <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-        
+
     </body>
 </html>

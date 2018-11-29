@@ -12,15 +12,23 @@
         <title>JSP Page</title>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <style>
             body, html {
-
-                background-repeat: no-repeat;
-                 background-image: linear-gradient(to top,#FFA17F,#00223E);
+                font-family: 'Oxygen', sans-serif;
+                background-color: #ffcccc;
             }
 
-
+            h1.title { 
+                font-size: 50px;
+                font-family: 'Passion One', cursive; 
+                font-weight: 400; 
+            }
+            hr{
+                width: 20%;
+                color: #fff;
+            }
 
             .card-container.card {
                 max-width: 350px;
@@ -154,28 +162,10 @@
         </style>
         <script>
             $(document).ready(function () {
-                // DOM ready
 
-                // Test data
-                /*
-                 * To test the script you should discomment the function
-                 * testLocalStorageData and refresh the page. The function
-                 * will load some test data and the loadProfile
-                 * will do the changes in the UI
-                 */
-                // testLocalStorageData();
-                // Load profile if it exits
                 loadProfile();
             });
 
-            /**
-             * Function that gets the data of the profile in case
-             * thar it has already saved in localstorage. Only the
-             * UI will be update in case that all data is available
-             *
-             * A not existing key in localstorage return null
-             *
-             */
             function getLocalProfile(callback) {
                 var profileImgSrc = localStorage.getItem("PROFILE_IMG_SRC");
                 var profileName = localStorage.getItem("PROFILE_NAME");
@@ -188,10 +178,6 @@
                 }
             }
 
-            /**
-             * Main function that load the profile if exists
-             * in localstorage
-             */
             function loadProfile() {
                 if (!supportsHTML5Storage()) {
                     return false;
@@ -208,12 +194,7 @@
                 });
             }
 
-            /**
-             * function that checks if the browser supports HTML5
-             * local storage
-             *
-             * @returns {boolean}
-             */
+
             function supportsHTML5Storage() {
                 try {
                     return 'localStorage' in window && window['localStorage'] !== null;
@@ -222,14 +203,6 @@
                 }
             }
 
-            /**
-             * Test data. This data will be safe by the web app
-             * in the first successful login of a auth user.
-             * To Test the scripts, delete the localstorage data
-             * and comment this call.
-             *
-             * @returns {boolean}
-             */
             function testLocalStorageData() {
                 if (!supportsHTML5Storage()) {
                     return false;
@@ -239,15 +212,105 @@
                 localStorage.setItem("PROFILE_REAUTH_EMAIL", "oneaccount@gmail.com");
             }
         </script>
+        <script>
+//Here you can add your own picture for snow. Just change the url
+            var snowsrc = "http://i13.servimg.com/u/f13/11/52/70/02/snowba10.png"
+//how many snowflakes there will be (currently 12)
+            var no = 47;
+//How fast will the snow disappear (0 is never)
+            var hidesnowtime = 0;
+//The height the snow will reach before it disappears ("windowheight" or "pageheight")
+            var snowdistance = "pageheight";
+///////////////////////////////End of Settings///////////////////////////////////
+            var ie4up = (document.all) ? 1 : 0;
+            var ns6up = (document.getElementById && !document.all) ? 1 : 0;
+            function iecompattest()
+            {
+                return (document.compatMode && document.compatMode != "BackCompat") ? document.documentElement : document.body
+            }
+            var dx, xp, yp;
+            var am, stx, sty;
+            var i, doc_width = 800, doc_height = 600;
+            if (ns6up)
+            {
+                doc_width = self.innerWidth;
+                doc_height = self.innerHeight;
+            } else
+            if (ie4up)
+            {
+                doc_width = document.body.clientWidth;
+                doc_height = document.body.clientHeight;
+            }
+            dx = new Array();
+            xp = new Array();
+            yp = new Array();
+            am = new Array();
+            stx = new Array();
+            sty = new Array();
+            for (i = 0; i < no; ++i)
+            {
+                dx[i] = 0;
+                xp[i] = Math.random() * (doc_width - 50);
+                yp[i] = Math.random() * doc_height;
+                am[i] = Math.random() * 20;
+                stx[i] = 0.02 + Math.random() / 10;
+                sty[i] = 0.7 + Math.random();
+                if (ie4up || ns6up)
+                {
+                    if (i == 0)
+                    {
+                        document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://rftactical.darkbb.com/index.htm\"><img src='" + snowsrc + "' border=\"0\"><\/a><\/div>");
+                    } else
+                    {
+                        document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='" + snowsrc + "' border=\"0\"><\/div>");
+                    }
+                }
+            }
+            function snowIE_NS6()
+            {
+                doc_width = ns6up ? window.innerWidth - 10 : iecompattest().clientWidth - 10;
+                doc_height = (window.innerHeight && snowdistance == "windowheight") ? window.innerHeight : (ie4up && snowdistance == "windowheight") ? iecompattest().clientHeight : (ie4up && !window.opera && snowdistance == "pageheight") ? iecompattest().scrollHeight : iecompattest().offsetHeight;
+                for (i = 0; i < no; ++i)
+                {
+                    yp[i] += sty[i];
+                    if (yp[i] > doc_height - 50)
+                    {
+                        xp[i] = Math.random() * (doc_width - am[i] - 30);
+                        yp[i] = 0;
+                        stx[i] = 0.02 + Math.random() / 10;
+                        sty[i] = 0.7 + Math.random();
+                    }
+                    dx[i] += stx[i];
+                    document.getElementById("dot" + i).style.top = yp[i] + "px";
+                    document.getElementById("dot" + i).style.left = xp[i] + am[i] * Math.sin(dx[i]) + "px";
+                }
+                snowtimer = setTimeout("snowIE_NS6()", 10);
+            }
+            function hidesnow()
+            {
+                if (window.snowtimer)
+                    clearTimeout(snowtimer)
+                for (i = 0; i < no; i++)
+                    document.getElementById("dot" + i).style.visibility = "hidden"
+            }
 
+            if (ie4up || ns6up)
+            {
+                snowIE_NS6();
+                if (hidesnowtime > 0)
+                    setTimeout("hidesnow()", hidesnowtime * 1000)
+            }
+        </script>
     <body>
 
 
 
         <div class="container">
             <div class="card card-container">
-                <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-                <img id="profile-img" class="profile-img-card" src="image/logo3.png" style="width: 150px;height: 150px" />
+
+                <img id="profile-img" class="profile-img-card" src="image/logo5.png" style="width: 150px;height: 150px" />
+
+                <center>   <h1 class="title" style="color: whitesmoke;text-shadow: black 0.1em 0.1em 0.2em">Log In </h1> </center>
                 <p id="profile-name" class="profile-name-card"></p>
 
                 <form action="NewLogin" method="post" class="form-signin">
@@ -260,16 +323,16 @@
                         </label>
                     </div>
                     <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+
                 </form><!-- /form -->
 
                 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
                 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                ${msg}
                 ${msg == "Invalid" ? '<script>swal("มีปัญหา", "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง","warning");</script>' : ''}
                 <center>
-                <div class="back">
-                    <a href="HomepageView.jsp" class="btn btn-outline-dark btn-lg active" role="button" aria-pressed="true">back</a>
-                </div>
+                    <div class="back">
+                        <a href="HomepageView.jsp" class="btn btn-outline-dark btn-lg active" role="button" aria-pressed="true">back</a>
+                    </div>
                 </center>
             </div><!-- /card-container -->
         </div><!-- /container -->
