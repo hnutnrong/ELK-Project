@@ -222,7 +222,7 @@
             <a href="LoginView.jsp">Login</a>
             <a href="ProductView.jsp">Product</a>
             <a href="ContactView.jsp">Contact</a>
-            <a href="AboutView.jsp">About Us</a>
+            <a href="AboutUs.jsp">About Us</a>
 
         </div>
         <div class="navbabe">
@@ -362,10 +362,10 @@
                     <hr class="star-dark mb-5">
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
-                            <a class="portfolio-item d-block mx-auto" href="HomepageView.jsp">
+                            <a class="portfolio-item d-block mx-auto" href="AboutUs.jsp">
                                 <div class="portfolio-item-caption d-flex position-absolute h-100 w-100"> </div>
                                                                 
-                                <img class="img-fluid" src="image/icon2.jpg" alt="" >
+                                <img class="img-fluid" src="image/icon6.jpg" alt="" >
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -373,7 +373,7 @@
                                 <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                                     
                                 </div>
-                                <img class="img-fluid" src="image/icon3.jpg" alt="">
+                                <img class="img-fluid" src="image/icon7.jpg" alt="">
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -381,7 +381,7 @@
                                 <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                                    
                                 </div>
-                                <img class="img-fluid" src="image/icon4.jpg" alt="">
+                                <img class="img-fluid" src="image/icon9.jpg" alt="">
                             </a>
                         </div>
 

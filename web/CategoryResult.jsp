@@ -217,6 +217,7 @@
             <a href="LoginView.jsp">Login</a>
             <a href="ProductView.jsp">Product</a>
             <a href="ContactView.jsp">Contact</a>
+            <a href="AboutUs.jsp">About Us</a>
         </div>
         
         <div class="navbabe">

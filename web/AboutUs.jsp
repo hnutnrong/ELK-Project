@@ -217,7 +217,7 @@
         var myVar;
 
         function myFunction() {
-            myVar = setTimeout(showPage, 1300);
+            myVar = setTimeout(showPage, 1100);
         }
 
         function showPage() {
@@ -234,6 +234,7 @@
             <a href="LoginView.jsp">Login</a>
             <a href="ProductView.jsp">Product</a>
             <a href="ContactView.jsp">Contact</a>
+            <a href="AboutUs.jsp">About Us</a>
         </div>
 
         <div class="navbabe">
@@ -350,7 +351,7 @@
                                 <img class="d-block w-100" src="image/change13.png" alt="Second slide" >
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="image/change12.png" alt="Third slide" >
+                                <img class="int303-project-A0X-IDLeader.zipd-block w-100" src="image/change12.png" alt="Third slide" >
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
